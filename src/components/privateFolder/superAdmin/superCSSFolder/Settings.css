@@ -1,0 +1,32 @@
+.adminSettingsBody{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #FFFDFD;
+}
+.adminSettingsUp{
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid rgb(18, 18, 18);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.adminSettingsUp > nav{
+    font-size: 13px;
+    color: #023047;
+}
+.adminSettingsUp > nav:hover{
+    font-size: 15px;
+    color: #FB8500;
+}
+.adminSettingsDown{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

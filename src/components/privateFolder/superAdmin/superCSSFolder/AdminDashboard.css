@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.adminBody{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEF7F7;
+    
+}
+/* .showdiv{
+    width: 30%;
+    height: 100%;
+    background-color: blue;
+    left: 0%;
+    z-index: 10;
+    position: absolute;
+} */
+.adminBodyLeft{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* position: relative; */
+}
+.adminBodyLeftTop{
+    width: 90%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    /* justify-content: center; */
+}
+.dashboardCurrentAmount{
+    width: 18%;
+    height: 80%;
+    background-color: #FB8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 4px;
+}
+.dashboardCurrentAmount > p{
+    font-size: 11px;
+    color: #023047;
+}
+.dashboardCurrentAmount > span{
+    font-size: 18px;
+    color: #023047;
+}
+.adminBodyLeftMid{
+    width: 100%;
+    height: 60%;
+    padding-inline: 20px;
+    /* background-color: #219EBC; */
+}
+.adminBodyLeftDown{
+    width: 90%;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    gap: 3px;
+}
+.adminBodyLeftDown > h5{
+    cursor: pointer;
+}
+.adminBodyLeftDown > h5:hover{
+    color: #FB8500;
+}
+.adminBodyLeftDown > h5:hover{
+    transform: scale(1);
+    /* color: #219EBC; */
+    color: #FB8500;
+}
+.adminHistory{
+    width: 70%;
+    height: 20px;
+    border: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin: 5px; */
+}
+.adminHistory > p{
+    font-size: 13px;
+}
+.adminHistory > span{
+    color: #219EBC;
+    font-size: 13px;
+}
+
+
+.adminBodyRight{
+    width: 30%;
+    height: 100%;
+    /* background-color: aqua; */
+}

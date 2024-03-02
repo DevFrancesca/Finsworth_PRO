@@ -1,0 +1,383 @@
+.signupBody{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFDFD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signupImg{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    @media screen and (max-width: 535px) {
+        display: none;
+    }
+}
+.signupImg > img{
+    width: 70%;
+    height: 20%;
+    object-fit: contain;
+    cursor: pointer;
+}
+.signupMiddle{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 90%;
+    }
+}
+.signupContainer1{
+    width: 43%;
+    height: 92%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    margin-right: 100px;
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 1024px) {
+        width: 53%;
+    }
+    @media screen and (max-width: 838px) {
+        width: 57%;
+    }
+    @media screen and (max-width: 728px) {
+        width: 65%;
+    }
+    @media screen and (max-width: 638px) {
+        width: 70%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: none;
+    }
+}
+.signupWrap1{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    gap: 8px;
+}
+.signupInputs{
+    width: 100%;
+    height: 14%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.signupInputs > input{
+    width: 100%;
+    height: 70%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgray;
+    /* border: none; */
+    padding: 5px;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+.signupInputs > input:hover{
+    border: 1px solid #FB8500;
+}
+.signupPasswordShow{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-right: 15px;
+}
+.signupPasswordShow > input{
+    width: 100%;
+    height: 90%;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    font-size: 10px;
+    background: transparent;
+}
+.signupPasswordShow:hover{
+    border: 1px solid #FB8500;
+}
+.signupCondition{
+    width: 100%;
+    height: 25px;
+    display: flex;
+    gap: 5px;
+    @media screen and (max-width: 352px) {
+        height: 27px;
+     }
+}
+.signupCondition > p{
+    font-size: 12px;
+    color: #023047;
+    @media screen and (max-width: 352px) {
+       font-size: 10px;
+    }
+}
+.signupWrap1 > button{
+    width: 100%;
+    height: 10%;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #023047;
+    color: #FFFDFD;
+    transition: all 260ms ease;
+    transform: scale(1);
+    @media screen and (max-width: 700px) {
+        height: 8%;
+    }
+}
+.signupWrap1 > button:hover{
+    background-color: #03293d;
+    color: #FB8500;
+    transform: scale(0.9);
+}
+.signupContainer1 > p{
+    color: #023047;
+    font-size: 15px;
+}
+.signupContainer1 > p > span{
+    color: #FB8500;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signupContainer1 > p > span:hover{
+    color: #c46800;
+}
+.signupRight{
+    width: 10%;
+    height: 100%;
+    @media screen and (max-width: 535px) {
+        display: none;
+    }
+}
+
+            /* CSS for image upload */
+.imageUploadCard{
+    width: 43%;
+    height: 50%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    margin-right: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: none;
+    }
+}
+.imageUploadCardWrap{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.imageUpload{
+    width: 120px;
+    height: 120px;
+    background-color: black;
+    border: 1px solid grey;
+    border-radius: 50%;
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 15px;
+    text-align: center;
+}
+.imageUploadP{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.previewImageContainer{
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.previewImageContainer > img{
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+.imageUploadBtns{
+    width: 100%;
+    height: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.imageUploadBtns > button{
+    width: 30%;
+    height: 60%;
+    background-color: #023047;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    color: #FFFDFD;
+    transition: all 260ms ease;
+    transform: scale(1);
+}
+.imageUploadBtns > button:hover{
+    background-color: #03293d;
+    color: #FB8500;
+    transform: scale(0.9);
+}
+.imageUploadCardWrap > p{
+    color: #023047;
+    font-size: 15px;
+}
+.imageUploadCardWrap > p > span{
+    color: #FB8500;
+    font-weight: 600;
+    cursor: pointer;
+}
+.imageUploadCardWrap > p > span:hover{
+    color: #c46800;
+}
+.imageUploadCard2{
+    width: 45%;
+    height: 50%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    /* margin-right: 100px; */
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: flex;
+    }
+}
+.upLoadCard2Logo{
+    width: 15%;
+    height: 100%;
+    display: flex;
+}
+.upLoadCard2Logo > img{
+    width: 100%;
+    height: 20%;
+    object-fit: contain;
+}
+
+            /* CSS for container2 */
+.signupContainer2{
+    width: 43%;
+    height: 90%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 1024px) {
+        width: 53%;
+    }
+    @media screen and (max-width: 838px) {
+        width: 57%;
+    }
+    @media screen and (max-width: 728px) {
+        width: 65%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: flex;
+    }
+    @media screen and (max-width: 420px) {
+        width: 90%;
+    }
+    @media screen and (max-width: 391px) {
+        width: 95%;
+    }
+    @media screen and (max-width: 320px) {
+        width: 100%;
+    }
+}
+.signupContainer2Logo{
+    width: 50%;
+    height: 65px;
+}
+.signupContainer2Logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.signupWrap2{
+    width: 90%;
+    height: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    @media screen and (max-width: 364px) {
+        width: 90%;
+    }
+}
+.signupWrap2 > button{
+    width: 100%;
+    height: 10%;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #023047;
+    color: #FFFDFD;
+    transition: all 260ms ease;
+    transform: scale(1);
+    @media screen and (max-width: 700px) {
+        height: 9%;
+    }
+}
+.signupWrap2 > button:hover{
+    background-color: #03293d;
+    color: #FB8500;
+    transform: scale(0.9);
+}
+.signupContainer2 > p{
+    color: #023047;
+    font-size: 15px;
+    margin-bottom: 15px;
+    @media screen and (max-width: 391px) {
+        font-size: 12px;
+    }
+    @media screen and (max-width: 340px) {
+        font-size: 10px;
+    }
+}
+.signupContainer2 > p > span{
+    color: #FB8500;
+    font-weight: 600;
+    cursor: pointer;
+}
+.signupContainer2 > p > span:hover{
+    color: #c46800;
+}

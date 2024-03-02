@@ -1,0 +1,164 @@
+.ContactUsPage{
+    width: 100%;
+    height: 100vh;
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ContactUsPageWrapper{
+    width: 74%;
+    height: 100%;
+    background-color: #ECECEC;
+    display: flex;
+}
+.ContactUsPageWrapperLeft{
+    width: 50%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5px;
+}
+.ContactUsPageWrapperLeftUp{
+    width: 100%;
+    height: 20%;
+    /* background-color: red; */
+}
+.ContactUsPageWrapperLeftUp h1{
+    font-size: 35px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: #252422;
+}
+.ContactUsPageWrapperLeftUp p{
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #252422;
+}
+.ContactUsPageWrapperLeftMid{
+    width: 100%;
+    height: 60%;
+    /* background-color: orangered; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+.ContactUsInputs{
+    width: 100%;
+    /* height: 16%; */
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #023047;
+   
+
+}
+.ContactUsInputs input{
+    width: 70%;
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #023047;
+    outline: none;
+    padding-inline: 5px;
+}
+#message{
+    width: 70%;
+    height: 100px;
+
+}
+.ContactUsSubmit{
+    width: 70%;
+    height: 35px;
+    background-color:#FB8500;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.ContactUsPageWrapperLeftDown{
+    width: 100%;
+    height: 20%;
+    /* background-color: orchid; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.ContactusSpan{
+    width: 70%;
+    height: 30px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+.ContactusSpan p{
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #023047;
+   
+}
+.ContactUsPageWrapperRight{
+    width: 50%;
+    height: 100%;
+    /* background-color: green; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.WrapperRightImgHolder{
+    width: 70%;
+    height: 90%;
+    background-color: grey;
+    border-radius: 20%;
+    
+}
+.WrapperRightImgHolder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+}
+
+@media only screen and (max-width: 767px) {
+    .ContactUsPageWrapper{
+        width: 100%;
+        height: 100%;
+    
+    }
+    .ContactUsPageWrapperLeft{
+        width: 100%;
+        height: 100;
+    }
+    .ContactUsPageWrapperLeftMid{
+        width: 100%;
+    }
+    .ContactUsPageWrapperRight{
+        display: none;
+    }
+    .ContactUsInputs input{
+        width: 90%;
+
+    }
+    #message{
+        width: 90%;
+
+    }
+    .ContactUsSubmit{
+        width: 90%;
+    }   
+}

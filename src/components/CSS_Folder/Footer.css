@@ -1,0 +1,196 @@
+
+.footerBody{
+    width: 100%;
+    height: 80vh;
+    background-color: #ECECEC;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+}
+.FooterUp{
+    width: 100%;
+    height: 30vh;
+    background-color: #ECECEC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.FooterUp h2{
+    color: #023047;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+.span{
+    display: flex;
+    gap: 5px;
+}
+.span p{
+    color: #333333;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+.FooterItSelf{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #023047;
+    border-top-right-radius: 50px;
+    border-top-left-radius: 50px;
+}
+.footerBodyWrap{
+    width: 77%;
+    height: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.FooterContainer{
+    width: 30%;
+    height: 100%;
+    /* background-color: brown; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+    padding-top: 30px;
+}
+.FooterContainer h1{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+ 
+}
+.FooterContainer p{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 12px;
+ 
+}
+.FooterConBox{
+    width: 100%;
+    height: 70px;
+    /* background-color: black; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.FooterConBoxCircle{
+    width: 20px;
+    height: 20px;
+    /* background-color: yellow; */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.FooterConBoxCircle img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    color: white;
+  
+}
+.mySpan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+@media only screen and (max-width: 500px) {
+    .footerBody{
+        width: 100%;
+    }
+    .FooterUp{
+        width: 100%;
+        
+    }
+    .FooterUp h2{
+        color: #023047;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 20px;
+    }
+    .span p{
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 10px;
+    }
+    .FooterItSelf{
+        width: 100%;
+    }
+    .footerBodyWrap{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footerBodyWrap{
+        width: 100%;
+    }
+    .FooterContainer{
+        width: 100%;
+    }
+    .FooterContainer h1{
+        font-size: 15px;
+    }
+    .FooterContainer p{
+        font-size: 10px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    
+}
+
+@media only screen and (max-width: 320px) {
+    .footerBody{
+        width: 100%;
+        height: max-content;
+    }
+    .FooterUp{
+        width: 100%;
+        
+    }
+    .FooterUp h2{
+        color: #023047;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 15px;
+    }
+    .span p{
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 8px;
+    }
+    .FooterItSelf{
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+}    

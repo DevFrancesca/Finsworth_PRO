@@ -1,0 +1,11 @@
+.Dropdown{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-inline:10px;
+}
+.Dropdown h3{
+    border-bottom: 2px solid black;
+}

@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.loginBody{
+    width: 100vw;
+    height: 100vh;
+    background-color: #FFFDFD; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginImg{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    @media screen and (max-width: 535px) {
+        display: none;
+    }
+}
+.loginImg > img{
+    width: 70%;
+    height: 20%;
+    object-fit: contain;
+}
+.loginMiddle{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 90%;
+    }
+}
+.loginContainer1{
+    width: 43%;
+    height: 80%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    /* margin-right: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 1024px) {
+        width: 53%;
+    }
+    @media screen and (max-width: 838px) {
+        width: 57%;
+    }
+    @media screen and (max-width: 728px) {
+        width: 65%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: none;
+    }
+}
+.loginWrap1{
+    width: 90%;
+    height: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.loginInputs{
+    width: 100%;
+    height: 16%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.loginInputs > input{
+    width: 100%;
+    height: 68%;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid lightgray;
+    padding: 5px;
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+.loginInputs > input:hover{
+    border: 1px solid #FB8500;
+}
+
+.passwordShow{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-right: 15px;
+}
+.passwordShow > input{
+    width: 100%;
+    height: 90%;
+    outline: none;
+    border: none;
+    padding-left: 5px;
+    font-size: 10px;
+    background: transparent;
+}
+.passwordShow:hover{
+    border: 1px solid #FB8500;
+}
+.forgotPassword{
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.forgotPassword > span{
+    font-size: 13px;
+    color: #023047;
+    cursor: pointer;
+    @media screen and (max-width: 391px) {
+        font-size: 13px;
+    }
+    @media screen and (max-width: 345px) {
+        font-size: 11px;
+    }
+}
+.forgotPassword > span:hover{
+    color: #FB8500;
+}
+.checkContainer{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    color: #023047;
+}
+.checkContainer > p{
+    font-size: 13px;
+    color: #023047;
+    @media screen and (max-width: 391px) {
+        font-size: 12px;
+    }
+    @media screen and (max-width: 345px) {
+        font-size: 10px;
+    }
+}
+
+.loginWrap1 > button{
+    width: 100%;
+    height: 13%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #023047;
+    color: #FFFDFD;
+    transition: all 260ms ease;
+    transform: scale(1);
+    @media screen and (max-width: 700px) {
+        height: 12%;
+    }
+}
+.loginWrap1 > button:hover{
+    background-color: #03293d;
+    color: #FB8500;
+    transform: scale(0.9);
+
+}
+.loginContainer1 > p{
+    color: #023047;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.loginContainer1 > p > span{
+    color: #FB8500;
+    font-weight: 600;
+    cursor: pointer;
+}
+.loginContainer1 > p > span:hover{
+    color: #c46800;
+}
+.loginRight{
+    width: 10%;
+    height: 100%;
+    @media screen and (max-width: 535px) {
+        display: none;
+    }
+}
+
+        /* CSS for container2 */
+.loginContainer2{
+    width: 43%;
+    height: 85%;
+    background-color: #FFFDFD;
+    border-radius: 15px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    @media screen and (max-width: 1024px) {
+        width: 53%;
+    }
+    @media screen and (max-width: 838px) {
+        width: 57%;
+    }
+    @media screen and (max-width: 728px) {
+        width: 65%;
+    }
+    @media screen and (max-width: 535px) {
+        width: 80%;
+        display: flex;
+    }
+    @media screen and (max-width: 414px) {
+        width: 90%;
+        display: flex;
+    }
+    @media screen and (max-width: 391px) {
+        width: 95%;
+    }
+    @media screen and (max-width: 320px) {
+        width: 100%;
+    }
+}
+.loginContainer2Logo{
+    width: 50%;
+    height: 65px;
+}
+.loginContainer2Logo > img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.loginWrap2{
+    width: 90%;
+    height: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    @media screen and (max-width: 364px) {
+        width: 90%;
+    }
+}
+.loginWrap2 > button{
+    width: 100%;
+    height: 12%;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background-color: #023047;
+    color: #FFFDFD;
+    transition: all 260ms ease;
+    transform: scale(1);
+    @media screen and (max-width: 700px) {
+        height: 12%;
+    }
+}
+.loginWrap2 > button:hover{
+    background-color: #03293d;
+    color: #FB8500;
+    transform: scale(0.9);
+}
+.loginContainer2 > p{
+    color: #023047;
+    font-size: 15px;
+    margin-bottom: 15px;
+    @media screen and (max-width: 391px) {
+        font-size: 12px;
+    }
+    @media screen and (max-width: 340px) {
+        font-size: 10px;
+    }
+}
+.loginContainer2 > p > span{
+    color: #FB8500;
+    font-weight: 600;
+    cursor: pointer;
+}
+.loginContainer2 > p > span:hover{
+    color: #c46800;
+}

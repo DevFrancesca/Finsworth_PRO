@@ -1,0 +1,239 @@
+.adminBudgetBody{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.adminBudgetWrap{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* display: none; */
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.adminBudgetTop{
+    width: 90%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminBudgetTopLeft{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.currentAmount{
+    width: 40%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 6px;
+}
+.currentAmount > p{
+    font-size: 11px;
+    color: #023047;
+}
+.currentAmount > span{
+    font-size: 18px;
+    color: #023047;
+}
+.adminBudgetTopRight{
+    width: 15%;
+    height: 90%;
+    /* background-color: #FB8500; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.createBudget{
+    width: 100%;
+    height: 100%;
+    background-color: #FB8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+.createBudgetBody{
+    width: 100%;
+    height: 87%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.adminBudgetDown{
+    width: 90%;
+    height: 80%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+}
+.budgetCreationConatainer{
+    width: 40%;
+    height: 80%;
+    background-color: #FFFDFD;
+    border-radius: 8px;
+    /* display: flex; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 2px;
+    flex-direction: column;
+
+}
+.budgetCreationConatainer.active {
+    display: flex;
+}
+.budgetCreationWrap{
+    width: 90%;
+    height: 60%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.budgetCreationWrap > h3{
+    color: #023047;
+}
+.budgetInputsContainer{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 45px;
+}
+.budgetInputs{
+    width: 50%;
+    height: 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+} 
+.budgetInputs > input{
+    width: 55%;
+    height: 80%;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 10px;
+    background-color: #fbf7f7;
+}
+.budgetInputs > input:hover{
+    border: 1px solid #FB8500;
+}
+select{
+    width: 50%;
+    height: 50%;
+    border: none;
+    border-radius: 3px;
+    font-size: 7px;
+    background-color: #fbf7f7;
+}
+
+select option{
+    border: none;
+}
+/* .select:hover{
+    border: 1px solid #FB8500;
+} */
+.btnContainer{
+    width: 69%;
+    height: 15%;
+    /* background-color: red; */
+    display: flex;
+    gap: 6.5vw;
+    align-items: center;
+}
+.btn1{
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 5px;
+    cursor: pointer;
+    background-color: #FFFDFD; 
+    color: #023047;
+    font-size: 13px;
+}
+.btn2{
+    padding: 9px 20px;
+    border: none;
+    border-radius: 10px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    cursor: pointer;
+    background-color: #023047;
+    color: #FFFDFD;
+    font-size: 15px;
+}
+
+.adminBudgetTop{
+    width: 90%;
+    height: 15%;
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.adminBudgetTopLeft{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.currentAmount{
+    width: 40%;
+    height: 100%;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    border-radius: 6px;
+}
+.currentAmount > p{
+    font-size: 11px;
+    color: #023047;
+}
+.currentAmount > span{
+    font-size: 18px;
+    color: #023047;
+}
+.adminBudgetTopRight{
+    width: 15%;
+    height: 90%;
+    /* background-color: #FB8500; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.createBudget{
+    width: 100%;
+    height: 100%;
+    background-color: #FB8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
