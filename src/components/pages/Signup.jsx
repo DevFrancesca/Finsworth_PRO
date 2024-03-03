@@ -109,7 +109,7 @@ const Signup = () => {
       })
 
       console.log(response.data);
-      navigate('/otppage')
+      navigate('/verification')
       
     } catch (error) {
       const errorMessage = error.response ? error.response.data.error : 'An error occurred';
