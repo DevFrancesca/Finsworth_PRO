@@ -8,7 +8,7 @@ import { CirclesWithBar } from 'react-loader-spinner';
 import { useDispatch } from 'react-redux';
 import { UserToken } from '../../features/Slice';
 
-const OtpPage = () => {
+const Verification = () => {
   const navigate = useNavigate();
   const homePage = () => {
     navigate('/');
@@ -158,4 +158,4 @@ const OtpPage = () => {
   );
 };
 
-export default OtpPage;
+export default Verification;
