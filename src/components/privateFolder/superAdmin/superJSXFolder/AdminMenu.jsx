@@ -6,8 +6,7 @@ import { CiWallet, CiBellOn } from "react-icons/ci";
 // import { CiBellOn } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GiSun } from "react-icons/gi";
-
-
+import { MdPayment } from "react-icons/md";
 
 
 const AdminMenu = () => {
@@ -27,23 +26,15 @@ const AdminMenu = () => {
 
           <div className="logo-navs">
             <div className="navLogo">
-              <RiDashboardLine/>
+              <RiDashboardLine style={{color:'white'}}/>
             </div>
             <NavLink to='/admindashboard' className={({isActive})=> isActive? "active" : "inActive"}>DASHBOARD</NavLink>
             <div className="navLogo"></div>
           </div>
 
-          {/* <div className="logo-navs">
-            <div className="navLogo">
-              <CiWallet/>
-            </div>
-            <NavLink to='/adminbudget' className={({isActive})=> isActive? "active" : "inActive"}>BUDGET</NavLink>
-            <div className="navLogo"></div>
-          </div> */}
-
           <div className="logo-navs">
             <div className="navLogo">
-              <CiWallet/>
+              <CiWallet style={{color:'white'}}/>
             </div>
             <NavLink to='/createbudget' className={({isActive})=> isActive? "active" : "inActive"}>BUDGET</NavLink>
             <div className="navLogo"></div>
@@ -59,15 +50,23 @@ const AdminMenu = () => {
 
           <div className="logo-navs">
             <div className="navLogo">
-              <CiBellOn/>
+              <CiBellOn style={{color:'white'}}/>
             </div>
             <NavLink to='/adminhistory' className={({isActive})=> isActive? "active" : "inActive"}>HISTORY</NavLink>
+            <div className="navLogo"></div>
+          </div>
+
+          <div className="logo-navs">
+            <div className="navLogo">
+            <MdPayment style={{color:'white'}}/>
+            </div>
+            <NavLink to='/paymentpage' className={({isActive})=> isActive? "active" : "inActive"}>SUBSCRIPTION</NavLink>
             <div className="navLogo"></div>
           </div>
           
           <div className="logo-navs">
             <div className="navLogo">
-            <IoSettingsOutline style={{background: "white"}}/>
+            <IoSettingsOutline style={{color:'white'}}/>
             </div>
             <NavLink to='/settings' className={({isActive})=> isActive? "active" : "inActive"}>SETTINGS</NavLink>
             <div className="navLogo"></div>
@@ -92,7 +91,7 @@ const AdminMenu = () => {
             <div className="bottomNavLogo">
               <img src="./src/components/images/ic_logout.png" alt="logo"/>
             </div>
-            <nav>LOGOUT</nav>
+            <nav onClick={homePage}>LOGOUT</nav>
             <div className="bottomNavLogo"></div>
           </div>
           {/* <nav>HIDE SIDE BAR</nav> */}

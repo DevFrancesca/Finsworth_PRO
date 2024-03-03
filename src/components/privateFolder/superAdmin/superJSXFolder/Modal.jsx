@@ -54,6 +54,8 @@ const Modal = ({ handleCancel }) => {
     }
   }
 
+  console.log(getToken)
+
   return (
     <div className="modal">
       <div className="modal-content">

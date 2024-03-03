@@ -5,6 +5,8 @@ import Heroes from './Heroes'
 import About from './About'
 import Footer from './Footer'
 import Dropdown from './Dropdown'
+import Team from './Team'
+import Subscribe from './Subscribe'
 
 const Home = () => {
 const [ show, setShow] = useState(false)
@@ -18,6 +20,9 @@ const [ show, setShow] = useState(false)
 
       <Heroes/>     
       <About />
+      <Team/>
+      <Subscribe/>
+
       <Footer/>
     
     </div>

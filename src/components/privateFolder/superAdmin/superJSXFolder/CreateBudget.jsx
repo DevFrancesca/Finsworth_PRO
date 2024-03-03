@@ -3,18 +3,18 @@ import '../superCSSFolder/CreateBudget.css';
 import { RiDeleteBinLine } from 'react-icons/ri';
 import { FaEdit } from 'react-icons/fa';
 import Modal from './Modal';
-
+import axios from 'axios';
+import ExpenseModal from './ExpenseModal';
 
 
 
 const CreateBudget = () => {
   const [showInput, setShowInput] = useState(false);
+  const [showExpenseModal, setShowExpenseModal] = useState(false);
+  const [budgetId, setBudgetId] = useState('');
   const [budgets, setBudgets] = useState([]);
 
   const getToken = JSON.parse(localStorage.getItem('token'));
-  console.log(getToken);
-
-  console.log(budgets);
 
   const handleCreate = () => {
     setShowInput(true);
@@ -24,30 +24,32 @@ const CreateBudget = () => {
     setShowInput(false);
   };
 
-// const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
+const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
 
-//   const handleGetAllBudget = async () => {
+  const handleGetAllBudget = async () => {
     
-//     try {
-//       const response = await axios.get(url, {
-//         headers: {
-//           Authorization: `Bearer ${getToken}`,
-//         },
-//       });
-//       console.log(response);
+    try {
+      const response = await axios.get(url, {
+        headers: {
+          Authorization: `Bearer ${getToken}`,
+        },
+      });
+      console.log(response);
 
-//       if (response.data) {
-//         setBudgets(response.data); 
-//         handleCancel();
-//       }
-//     } catch (error) {
-//       console.error('Error fetching data:', error);
-//     }
-//   };
+      if (response.data) {
+        setBudgets(response.data); 
+        handleCancel();
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
 
-  // useEffect(() => {
-  //   handleGetAllBudget();
-  // }, []);
+  useEffect(() => {
+    handleGetAllBudget();
+  }, []);
+
+  console.log(budgetId);
 
   return (
     <div className='createBudgetBody'>
@@ -92,9 +94,15 @@ const CreateBudget = () => {
     <p>Date</p>
   </section>
 
+  {/* <ExpenseModal /> */}
+
+  {
+    showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
+  }
+
   <div className="showBudgetCreatedWrap">
-  {budgets.length > 0 ? (
-  budgets.map((budget) => (
+  {budgets?.budgets?.length > 0 ? (
+  budgets?.budgets?.map((budget) => (
     <div className="showBudgetCreated" key={budget.id}>
       <h4>₦ {budget.amount}</h4>
       <span>{budget.budgetType}</span>
@@ -102,6 +110,7 @@ const CreateBudget = () => {
         <RiDeleteBinLine/>
         <FaEdit/>
       </div>
+      <button onClick={() =>  setBudgetId(budget.id)}>Add expense</button>
     </div>
   ))
 ) : (

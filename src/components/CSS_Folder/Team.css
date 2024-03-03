@@ -1,0 +1,158 @@
+.TeamBody{
+    width: 100%;
+    height: 90vh;
+    background-color: #ECECEC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.TeamBodyWrapper{
+    width: 80%;
+    height: 100%;
+    background-color: aqua;
+}
+.TeamBodyWrapUp{
+    width: 100%;
+    height: 20%;
+    background-color: #023047;
+    padding-inline: 25px;
+}
+.TeamBodyWrapUp h1{
+    color:white;
+    font-size: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+   
+}
+.TeamBodyWrapUp p{
+    color:white;
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+   
+}
+.TeamBodyWrapDown{
+    width: 100%;
+    height: 80%;
+    background-color: #ECECEC;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.Team{
+    width: 19%;
+    height: 75%;
+    background-color: olive; 
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+}
+.TeamUp{
+    width: 100%;
+    height: 90%;
+    background-color: #fb8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 50px;
+}
+.TeamUp img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.TeamDown{
+    width: 100%;
+    height: 10%;
+    background-color: #023047;
+    padding-inline: 20px;
+    border-bottom-left-radius: 50px;
+    color: white;
+}
+.TeamDown h5{
+    font-size: 10px;
+    color: #252422;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+.TeamDown p{
+    color: #252422;
+    font-size: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    
+}
+
+@media screen and (max-width: 320px) {
+    .TeamBody{
+        width: 100%;
+        height: 100%;
+    }
+    .TeamBodyWrapper{
+        width: 100%;
+    }
+    .TeamBodyWrapUp{
+        width: 100%;
+    }
+    .TeamBodyWrapUp h1{
+        font-size: 15px;
+    }
+    .TeamBodyWrapUp p{
+        font-size: 8px;
+    }
+    .TeamBodyWrapDown{
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .Team{
+        width: 80%;
+        height: 100%;
+    }
+    .TeamUp{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+@media screen and (max-width: 414px) {
+    .TeamBody{
+        width: 100%;
+        height: 100%;
+    }
+    .TeamBodyWrapper{
+        width: 100%;
+    }
+    .TeamBodyWrapUp{
+        width: 100%;
+    }
+    .TeamBodyWrapUp h1{
+        font-size: 15px;
+    }
+    .TeamBodyWrapUp p{
+        font-size: 8px;
+    }
+    .TeamBodyWrapDown{
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .Team{
+        width: 80%;
+        height: 100%;
+    }
+    .TeamUp{
+        width: 100%;
+        height: 100%;
+    }
+
+}

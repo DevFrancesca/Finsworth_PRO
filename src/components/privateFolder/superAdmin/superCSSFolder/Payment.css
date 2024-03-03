@@ -1,0 +1,67 @@
+.PaymentBody{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.PaymentWrapper{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.PaymentCard{
+    width: 70%;
+    height: 80%;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: rgb(0, 0, 0, 0.35)0px 5px 15px;
+    
+}
+.PaymentInputs{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    
+}
+.Paymentinputs{
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+}
+.PaymentPlan{
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    outline: none;
+
+}
+.Paymentbtn{
+    width: 80%;
+    height: 40px;
+    background-color: #fb8500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+
+}

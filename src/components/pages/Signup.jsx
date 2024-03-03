@@ -6,11 +6,15 @@ import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import Swal from 'sweetalert2'
 import axios from 'axios'
 import { CirclesWithBar } from 'react-loader-spinner'
+import { UserToken } from '../../features/Slice';
+import { useDispatch } from 'react-redux';
+
 
 const Signup = () => {
   const navigate = useNavigate()
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+  const Dispatch = useDispatch();
 
   const homePage = () => {
     navigate('/')
@@ -97,7 +101,9 @@ const Signup = () => {
     setIsLoading(true)
     try {
       const response = await axios.post(url, formData)
-      console.log(response, "response from api")
+      // console.log(response, "response from api")
+      Dispatch(UserToken(response.data.token));
+
       
       Swal.fire({
         title: 'Sign Up Successful!',
@@ -108,7 +114,7 @@ const Signup = () => {
         allowOutsideClick: false
       })
 
-      console.log(response.data);
+      // console.log(response.data);
       navigate('/verification')
       
     } catch (error) {
@@ -243,114 +249,6 @@ const Signup = () => {
         }
 
         {/* code snippets for my container2 for media query */}
-
-        {imageShow === false ? 
-          <div className="signupContainer2">
-            <div className="signupWrap2">
-              <h3>Create Account</h3>
-              <div className="signupInputs">
-                <label htmlFor="">Company Name</label>
-                <input type="text"
-                  placeholder='e.g Cheszo Enterprise'
-                  value={company_Name}
-                  onChange={handleCompanyName}
-                />
-                <p className="error">{errorMessage.company_Name}</p>
-              </div>
-
-              <div className="signupInputs">
-                <label htmlFor="">Email</label>
-                <input type="email"
-                  placeholder='e.g agbazofrancesca@gmail.com'
-                  value={email}
-                  onChange={handleEmail}
-                />
-                <p className="error">{errorMessage.email}</p>
-              </div>
-
-              <div className="signupInputs">
-                <label htmlFor="">Password</label>
-                <div className="signupPasswordShow">
-                  <input type={showPassword ? "text" : "password"} placeholder='Enter password'
-                    value={password}
-                    onChange={handlePassword}
-                  />
-                  <p className="error">{errorMessage.password}</p>
-
-                  {showPassword ? <AiOutlineEye onClick={handleShow} />
-                    :
-                    <AiOutlineEyeInvisible onClick={handleShow} />
-                  }
-                </div>
-              </div>
-
-              <div className="signupInputs">
-                <label htmlFor="">Confirm Password</label>
-                <div className="signupPasswordShow">
-                  <input type={showConfirmPassword ? "text" : "password"} placeholder='Confirm password'
-                    value={confirmPassword}
-                    onChange={handleConfirmPassword}
-                  />
-                  <p className="error">{errorMessage.confirmPassword}</p>
-                  {showConfirmPassword ? <AiOutlineEye onClick={handleShowConfirm} />
-                    :
-                    <AiOutlineEyeInvisible onClick={handleShowConfirm} />
-                  }
-                </div>
-              </div>
-
-              <div className="signupCondition">
-                <input type="checkbox" />
-                <p>By signing up you agree to our Terms of Service and <br />Privacy Policy</p>
-              </div>
-              <button onClick={() => setImageShow(true)}>Next</button>
-            </div>
-            <p>Already have an account? <span onClick={loginPage}>Login</span></p>
-          </div>
-          :
-          <div className="imageUploadCard2">
-            <div className="imageUpload2CardWrap">
-              <div className="imageUpload">
-                {!PreviewUrl && 
-                  <>
-                    <label htmlFor="myfile" className="imageUploadP">
-                      Browse Photo
-                    </label>
-                    <input type="file" id="myfile" name="myfile" hidden
-                      onChange={handleProfilePicture}/>
-                    <p className="error">{errorMessage.profilePicture}</p>
-                  </>
-                }
-                {PreviewUrl && (
-                  <div className="previewImageContainer">
-                    <img src={PreviewUrl} alt="Profile Preview" className="previewImage" />
-                  </div>
-                )}
-              </div>
-              <div className="imageUploadBtns">
-                <button className="backButton" onClick={() => setImageShow(false)}>Back</button>
-                <button onClick={handleRegister}>
-                  {isLoading ? 
-                    <CirclesWithBar
-                      height="30"
-                      width="30"
-                      color="#219EBC"
-                      outerCircleColor="#FB8500"
-                      innerCircleColor="#219EBC"
-                      barColor="#219EBC"
-                      ariaLabel="circles-with-bar-loading"
-                      wrapperStyle={{}}
-                      wrapperClass=""
-                      visible={true}
-                    /> :
-                    "Register"
-                  }
-                </button>
-              </div>
-              <p>Already have an account? <span onClick={loginPage}>Login</span></p>
-            </div>
-          </div>
-          }
       </div>
 
       <div className="signupRight"></div>

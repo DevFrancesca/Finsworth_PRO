@@ -4,14 +4,15 @@ import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
 
 
-const ExpenseModal = ({ isOpen, onClose, onSubmit }) => {
+const ExpenseModal = ({ isOpen, onClose, onSubmit, budgetId }) => {
   const [isLoading, setIsLoading] = useState(false);
+  console.log(budgetId)
 
   const [newExpense, setNewExpense] = useState({
       category: '',
       amount: 0,
       description: '',
-      budgetId: ''
+      budgetId
   });
 
   const handleInputChange = (event) => {
@@ -29,7 +30,8 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit }) => {
 
   const handleSubmitExpenses = async (event) => {
     event.preventDefault();
-    onSubmit(newExpense);
+    // onSubmit(newExpense);
+    console.log(newExpense)
 
     setIsLoading(true)
     try {
@@ -39,7 +41,7 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit }) => {
         category: '',
         amount: 0,
         description: '',
-        budgetId: ''
+        budgetId
       });
       setIsLoading(false)
       console.log(response.data)
@@ -76,6 +78,12 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit }) => {
             type="date"
             name="date"
             value={newExpense.date}
+            onChange={handleInputChange}
+            required
+          />
+          <input
+            name="category"
+            value={newExpense.category}
             onChange={handleInputChange}
             required
           />

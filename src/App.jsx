@@ -18,8 +18,9 @@ import ContactPage from './components/body/ContactPage'
 import ForgotPassword from './components/pages/ForgotPassword'
 import NewPassword from './components/pages/NewPassword'
 import About from './components/body/About'
-// import Verification from './components/pages/Verification'
-import OtpPage from './components/pages/OtpPage'
+import Verification from './components/pages/Verification'
+import Payment from './components/privateFolder/superAdmin/superJSXFolder/Payment'
+// import OtpPage from './components/pages/Verification'
 
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
-        <Route path='/otppage'element={<OtpPage/>}/>
+        <Route path='/verification'element={<Verification/>}/>
         <Route path= '/contactus' element={<ContactPage/>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>
@@ -49,6 +50,7 @@ const App = () => {
           <Route path='/editprofile' element={<EditProfile/>}/>
           <Route path='/changepassword' element={<ChangePassword/>}/>
           <Route path='/addaccount' element={<AddAccount/>}/>
+          <Route path='/paymentpage' element={<Payment/>}/>
         </Route>
       </Routes>
      </BrowserRouter>

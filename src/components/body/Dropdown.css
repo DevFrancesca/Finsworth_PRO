@@ -4,7 +4,47 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding-inline:10px;
+    /* padding-inline:10px; */
+}
+.Dropdown h3{
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    color: #333333;
+    cursor: pointer;
+}
+.Droplogin{
+    width: 100px;
+    height: 30px;
+    background-color: #fb8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+}
+.Dropsignup{
+    width: 100px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border: 1px solid #023047;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
 }
 .Dropdown h3{
     border-bottom: 2px solid black;

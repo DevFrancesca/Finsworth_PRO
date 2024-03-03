@@ -6,6 +6,16 @@
     position: sticky;
     justify-content: space-between;
     top: 0%;
+    box-shadow: rgb(0, 0, 0, 0.35)0px 5px 15px;
+}
+.HeaderDRop{
+    width: 100%;
+    height: max-content;
+    padding: 10px;
+    position:absolute;
+    top: 50px;
+    left: 0;
+    background-color: white;
 }
 .leftHeader{
     width: 20%;
@@ -51,9 +61,12 @@
     gap: 15px;
 }
 .login{
-    width: 100px;
-    height: 30px;
+    width: 110px;
+    height: 40px;
     background-color: #fb8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: white;
     border: none;
     border-radius: 5px;
@@ -64,9 +77,12 @@
     font-size: 12px;
 }
 .signup{
-    width: 100px;
-    height: 30px;
+    width: 110px;
+    height: 40px;
     background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: black;
     border: 1px solid #023047;
     border-radius: 5px;
@@ -103,12 +119,10 @@
         display: none;
     }
     .rightimg{
-        width: 90%;
+        /* width: 90%; */
         display: flex;
         align-items: center;
         justify-content: flex-end;
         font-size: 20px;
     }
- 
-
 }

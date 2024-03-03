@@ -460,164 +460,762 @@
 
 
 
-import React, { useState, useRef, useEffect } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
-import { useNavigate } from 'react-router-dom';
-import GL from '../images/goldLogo.png';
-import '../pagesCSS/OtpPage.css';
-import { CirclesWithBar } from 'react-loader-spinner';
-import { useDispatch } from 'react-redux';
-import { UserToken } from '../../features/Slice';
+// import React, { useState, useRef, useEffect } from 'react';
+// import axios from 'axios';
+// import Swal from 'sweetalert2';
+// import { useNavigate } from 'react-router-dom';
+// import GL from '../images/goldLogo.png';
+// import '../pagesCSS/OtpPage.css';
+// import { CirclesWithBar } from 'react-loader-spinner';
+// import { useDispatch } from 'react-redux';
+// import { UserToken } from '../../features/Slice';
 
-const Verification = () => {
-  const navigate = useNavigate();
-  const homePage = () => {
-    navigate('/');
-  };
+// const Verification = () => {
+//   const navigate = useNavigate();
+//   const homePage = () => {
+//     navigate('/');
+//   };
 
-  const inputRefs = [useRef(), useRef(), useRef(), useRef()];
-  const [isLoading, setIsLoading] = useState(false);
-  const [verificationResult, setVerificationResult] = useState('');
-  const [countdown, setCountdown] = useState(300);
-  const [token, setToken] = useState('')
+//   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [verificationResult, setVerificationResult] = useState('');
+//   const [countdown, setCountdown] = useState(300);
+//   const [token, setToken] = useState('')
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCountdown((prevCountdown) => prevCountdown - 1);
-    }, 1000);
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCountdown((prevCountdown) => prevCountdown - 1);
+//     }, 1000);
 
-    return () => {
-      clearInterval(timer);
-    };
-  }, []);
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   }, []);
 
-  const formatTime = (time) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = time % 60;
-    return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
-  };
+//   const formatTime = (time) => {
+//     const minutes = Math.floor(time / 60);
+//     const seconds = time % 60;
+//     return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+//   };
 
-  const handleInputChange = (index, value) => {
-    if (value.length === 1 && index < inputRefs.length - 1) {
-      inputRefs[index + 1].current.focus();
-    }
-  };
+//   const handleInputChange = (index, value) => {
+//     if (value.length === 1 && index < inputRefs.length - 1) {
+//       inputRefs[index + 1].current.focus();
+//     }
+//   };
 
-  const handleVerification = async () => {
-    setIsLoading(true);
+//   const handleVerification = async () => {
+//     setIsLoading(true);
 
-    try {
-      const otp = inputRefs.map(ref => ref.current.value).join(`https://finsworthpro.onrender.com/api/verify/${UserToken}`);
+//     try {
+//       const otp = inputRefs.map(ref => ref.current.value).join(`https://finsworthpro.onrender.com/api/verify/${UserToken}`);
 
-      const Dispatch = useDispatch()
+//       const Dispatch = useDispatch()
 
-      console.log(otp)
+//       console.log(otp)
 
-      const response = await axios.post(url, {otp},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      );
-      Dispatch(UserToken(response.data.token))
+//       const response = await axios.post(url, {otp},
+//         {
+//           headers: {
+//             Authorization: `Bearer ${token}`
+//           }
+//         }
+//       );
+//       Dispatch(UserToken(response.data.token))
 
-      setIsLoading(false);
-      Swal.fire({
-        title: 'Account verified Successfully!',
-        text: `${response.data.message}`,
-        icon: 'success',
-        showCancelButton: false,
-        confirmButtonColor: '',
-        allowOutsideClick: false,
-      });
+//       setIsLoading(false);
+//       Swal.fire({
+//         title: 'Account verified Successfully!',
+//         text: `${response.data.message}`,
+//         icon: 'success',
+//         showCancelButton: false,
+//         confirmButtonColor: '',
+//         allowOutsideClick: false,
+//       });
 
-      if (response.data.verified) {
-        setVerificationResult('Account verified successfully.');
-      } else {
-        setVerificationResult('Account verification failed.');
-      }
+//       if (response.data.verified) {
+//         setVerificationResult('Account verified successfully.');
+//       } else {
+//         setVerificationResult('Account verification failed.');
+//       }
 
-      navigate('/login')
-    } catch (error) {
-      Swal.fire({
-        icon: 'error',
-        title: error.response.message,
-        text: 'Account verification failed!',
-        color: 'red'
-      });
-      console.error('Error verifying account:', error.message);
-      setVerificationResult('Error verifying account.');
-    }
-  };
+//       navigate('/login')
+//     } catch (error) {
+//       Swal.fire({
+//         icon: 'error',
+//         title: error.response.message,
+//         text: 'Account verification failed!',
+//         color: 'red'
+//       });
+//       console.error('Error verifying account:', error.message);
+//       setVerificationResult('Error verifying account.');
+//     }
+//   };
 
-  useEffect(() => {
+//   useEffect(() => {
     
-    const fetchToken = async () => {
-      try {
-        // Fetching token from your backend or local storage
-        const response = await axios.get('https://finsworthpro.onrender.com/api/resendOtp');
-        const fetchedToken = response.data.token;
-        setToken(fetchedToken);
-      } catch (error) {
-        console.error('Error fetching token:', error.message);
-      }
-    };
+//     const fetchToken = async () => {
+//       try {
+//         // Fetching token from your backend or local storage
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/resendOtp');
+//         const fetchedToken = response.data.token;
+//         setToken(fetchedToken);
+//       } catch (error) {
+//         console.error('Error fetching token:', error.message);
+//       }
+//     };
 
-    fetchToken();
-  }, []);
+//     fetchToken();
+//   }, []);
 
-  return (
-    <article className="otpBody">
-      <section className="otpBodyLeft">
-        <img src={GL} alt="logo" onClick={homePage} />
-      </section>
-      <section className="otpBodyMiddle">
-        <div className="otpCard">
-          <div className="otpCardUp">
-            <h3>Sign Up</h3>
-            <h5>Verify your account</h5>
-            <p>We've sent a One Time Password(OTP) to <br />**********@gmail.com</p>
-          </div>
-          <div className="otpCardDown">
-            <h6>{formatTime(countdown)}</h6>
+//   return (
+//     <article className="otpBody">
+//       <section className="otpBodyLeft">
+//         <img src={GL} alt="logo" onClick={homePage} />
+//       </section>
+//       <section className="otpBodyMiddle">
+//         <div className="otpCard">
+//           <div className="otpCardUp">
+//             <h3>Sign Up</h3>
+//             <h5>Verify your account</h5>
+//             <p>We've sent a One Time Password(OTP) to <br />**********@gmail.com</p>
+//           </div>
+//           <div className="otpCardDown">
+//             <h6>{formatTime(countdown)}</h6>
 
-            <div className="otpCardInputs">
-              {inputRefs.map((ref, index) => (
-                <input
-                  key={index}
-                  ref={ref}
-                  maxLength={1}
-                  onChange={(e) => handleInputChange(index, e.target.value)}
-                />
-              ))}
-            </div>
-            <p>Didn't receive an OTP? <span>RESEND</span></p>
-            <button onClick={handleVerification}>
-              {isLoading ?
-                <CirclesWithBar
-                  height="30"
-                  width="30"
-                  color="#219EBC"
-                  outerCircleColor="#FB8500"
-                  innerCircleColor="#219EBC"
-                  barColor="#219EBC"
-                  ariaLabel="circles-with-bar-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                /> :
-                "Verify"
-              }
-            </button>
-            <span style={{ color: "red" }}>{verificationResult}</span>
-          </div>
+//             <div className="otpCardInputs">
+//               {inputRefs.map((ref, index) => (
+//                 <input
+//                   key={index}
+//                   ref={ref}
+//                   maxLength={1}
+//                   onChange={(e) => handleInputChange(index, e.target.value)}
+//                 />
+//               ))}
+//             </div>
+//             <p>Didn't receive an OTP? <span>RESEND</span></p>
+//             <button onClick={handleVerification}>
+//               {isLoading ?
+//                 <CirclesWithBar
+//                   height="30"
+//                   width="30"
+//                   color="#219EBC"
+//                   outerCircleColor="#FB8500"
+//                   innerCircleColor="#219EBC"
+//                   barColor="#219EBC"
+//                   ariaLabel="circles-with-bar-loading"
+//                   wrapperStyle={{}}
+//                   wrapperClass=""
+//                   visible={true}
+//                 /> :
+//                 "Verify"
+//               }
+//             </button>
+//             <span style={{ color: "red" }}>{verificationResult}</span>
+//           </div>
+//         </div>
+//       </section>
+//       <section className="otpBodyRight"></section>
+//     </article>
+//   );
+// };
+
+// export default Verification;
+
+
+
+// import React, { useState, useRef, useEffect } from 'react';
+// import axios from 'axios';
+// import Swal from 'sweetalert2';
+// import { useNavigate } from 'react-router-dom';
+// import GL from '../images/goldLogo.png';
+// import '../pagesCSS/Verification.css';
+// import { CirclesWithBar } from 'react-loader-spinner';
+// import { useDispatch } from 'react-redux';
+// import { UserToken } from '../../features/Slice';
+
+// const Verification = () => {
+//   const navigate = useNavigate();
+//   const homePage = () => {
+//     navigate('/');
+//   };
+
+//   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [verificationResult, setVerificationResult] = useState('');
+//   const [countdown, setCountdown] = useState(300);
+//   const [token, setToken] = useState('')
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCountdown((prevCountdown) => prevCountdown - 1);
+//     }, 1000);
+
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   }, []);
+
+//   const formatTime = (time) => {
+//     const minutes = Math.floor(time / 60);
+//     const seconds = time % 60;
+//     return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+//   };
+
+//   const handleInputChange = (index, value) => {
+//     if (value.length === 1 && index < inputRefs.length - 1) {
+//       inputRefs[index + 1].current.focus();
+//     }
+//   };
+
+//   // const handleInputChange = (index, value) => {
+//   //   inputRefs[index].current.value = value;
+//   //   if (value.length === 1 && index < inputRefs.length - 1) {
+//   //     inputRefs[index + 1].current.focus();
+//   //   }
+//   // };
+
+//   const handleVerification = async () => {
+//     setIsLoading(true);
+
+//     try {
+//       const otp = inputRefs.map(ref => ref.current.value).join(`https://finsworthpro.onrender.com/api/verify/${UserToken}`);
+
+//       const Dispatch = useDispatch()
+
+//       console.log(otp)
+
+//       const response = await axios.post(url, {otp},
+//         {
+//           headers: {
+//             Authorization: `Bearer ${token}`
+//           }
+//         }
+//       );
+//       Dispatch(UserToken(response.data.token))
+
+//       setIsLoading(false);
+//       Swal.fire({
+//         title: 'Account verified Successfully!',
+//         text: `${response.data.message}`,
+//         icon: 'success',
+//         showCancelButton: false,
+//         confirmButtonColor: '',
+//         allowOutsideClick: false,
+//       });
+
+//       if (response.data.verified) {
+//         setVerificationResult('Account verified successfully.');
+//       } else {
+//         setVerificationResult('Account verification failed.');
+//       }
+
+//       navigate('/login')
+//     } catch (error) {
+//       Swal.fire({
+//         icon: 'error',
+//         title: error.response.message,
+//         text: 'Account verification failed!',
+//         color: 'red'
+//       });
+//       console.error('Error verifying account:', error.message);
+//       setVerificationResult('Error verifying account.');
+//     }
+//   };
+
+//   useEffect(() => {
+    
+//     const fetchToken = async () => {
+//       try {
+//         // Fetching token from your backend or local storage
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/resendOtp');
+//         const fetchedToken = response.data.token;
+//         setToken(fetchedToken);
+//       } catch (error) {
+//         console.error('Error fetching token:', error.message);
+//       }
+//     };
+
+//     fetchToken();
+//   }, []);
+
+//   return (
+//     <article className="otpBody">
+//       <section className="otpBodyLeft">
+//         <img src={GL} alt="logo" onClick={homePage} />
+//       </section>
+//       <section className="otpBodyMiddle">
+//         <div className="otpCard">
+//           <div className="otpCardUp">
+//             <h3>Sign Up</h3>
+//             <h5>Verify your account</h5>
+//             <p>We've sent a One Time Password(OTP) to <br />**********@gmail.com</p>
+//           </div>
+//           <div className="otpCardDown">
+//             <h6>{formatTime(countdown)}</h6>
+
+//             <div className="otpCardInputs">
+//               {inputRefs.map((ref, index) => (
+//                 <input
+//                   key={index}
+//                   ref={ref}
+//                   maxLength={1}
+//                   onChange={(e) => handleInputChange(index, e.target.value)}
+//                 />
+//               ))}
+//             </div>
+//             <p>Didn't receive an OTP? <span>RESEND</span></p>
+//             <button onClick={handleVerification}>
+//               {isLoading ?
+//                 <CirclesWithBar
+//                   height="30"
+//                   width="30"
+//                   color="#219EBC"
+//                   outerCircleColor="#FB8500"
+//                   innerCircleColor="#219EBC"
+//                   barColor="#219EBC"
+//                   ariaLabel="circles-with-bar-loading"
+//                   wrapperStyle={{}}
+//                   wrapperClass=""
+//                   visible={true}
+//                 /> :
+//                 "Verify"
+//               }
+//             </button>
+//             <span style={{ color: "red" }}>{verificationResult}</span>
+//           </div>
+//         </div>
+//       </section>
+//       <section className="otpBodyRight"></section>
+//     </article>
+//   );
+// };
+
+// export default Verification;
+
+
+
+// import React from 'react'
+// import '../superCSSFolder/AdminMenu.css'
+// import { NavLink, useNavigate } from 'react-router-dom'
+// import { RiDashboardLine } from "react-icons/ri"
+// import { CiWallet, CiBellOn } from "react-icons/ci";
+// // import { CiBellOn } from "react-icons/ci";
+// import { IoSettingsOutline } from "react-icons/io5";
+// import { GiSun } from "react-icons/gi";
+// import { MdPayment } from "react-icons/md";
+
+
+// const AdminMenu = () => {
+//   const navigate = useNavigate()
+
+//   const homePage =()=>{
+//     navigate('/')
+//   }
+//   return (
+//     <div className='menuBody'>
+//       <div className="menuTop">
+//         <div className="menuLogo">
+//           <img src="./src/components/images/goldLogo.png" alt="logo" onClick={homePage}/>
+//         </div>
+
+//         <section className="navigations">
+
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//               <RiDashboardLine style={{color:'white'}}/>
+//             </div>
+//             <NavLink to='/admindashboard' className={({isActive})=> isActive? "active" : "inActive"}>DASHBOARD</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//               <CiWallet style={{color:'white'}}/>
+//             </div>
+//             <NavLink to='/createbudget' className={({isActive})=> isActive? "active" : "inActive"}>BUDGET</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//               <img src="./src/components/images/contrast_bank.png" alt="logo"/>
+//             </div>
+//             <NavLink to='/adminexpenses' className={({isActive})=> isActive? "active" : "inActive"}>EXPENSES</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//               <CiBellOn style={{color:'white'}}/>
+//             </div>
+//             <NavLink to='/adminnotification' className={({isActive})=> isActive? "active" : "inActive"}>NOTIFICATION</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//             <MdPayment style={{color:'white'}}/>
+//             </div>
+//             <NavLink to='/paymentpage' className={({isActive})=> isActive? "active" : "inActive"}>SUBSCRIPTION</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+          
+//           <div className="logo-navs">
+//             <div className="navLogo">
+//             <IoSettingsOutline style={{color:'white'}}/>
+//             </div>
+//             <NavLink to='/settings' className={({isActive})=> isActive? "active" : "inActive"}>SETTINGS</NavLink>
+//             <div className="navLogo"></div>
+//           </div>
+          
+//         </section>
+//       </div>
+
+//       <div className="menuBottom">
+//         <section className="bottomNavigations">
+//           <div className="toggleMode">
+//             <article className="toggleImg">
+//               <GiSun/>
+//             </article>
+//             <nav>MODE</nav>
+//             <article className="toggleImg">
+//               <img src="./src/components/images/ion_moon.png" alt="logo"/>
+//             </article>
+//           </div>
+
+//           <div className="bottomLogo-navs">
+//             <div className="bottomNavLogo">
+//               <img src="./src/components/images/ic_logout.png" alt="logo"/>
+//             </div>
+//             <nav onClick={homePage}>LOGOUT</nav>
+//             <div className="bottomNavLogo"></div>
+//           </div>
+//           <nav>HIDE SIDE BAR</nav>
+//         </section>
+        
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default AdminMenu
+
+
+{imageShow === false ? 
+  <div className="signupContainer2">
+    <div className="signupWrap2">
+      <h3>Create Account</h3>
+      <div className="signupInputs">
+        <label htmlFor="">Company Name</label>
+        <input type="text"
+          placeholder='e.g Cheszo Enterprise'
+          value={company_Name}
+          onChange={handleCompanyName}
+        />
+        <p className="error">{errorMessage.company_Name}</p>
+      </div>
+
+      <div className="signupInputs">
+        <label htmlFor="">Email</label>
+        <input type="email"
+          placeholder='e.g agbazofrancesca@gmail.com'
+          value={email}
+          onChange={handleEmail}
+        />
+        <p className="error">{errorMessage.email}</p>
+      </div>
+
+      <div className="signupInputs">
+        <label htmlFor="">Password</label>
+        <div className="signupPasswordShow">
+          <input type={showPassword ? "text" : "password"} placeholder='Enter password'
+            value={password}
+            onChange={handlePassword}
+          />
+          <p className="error">{errorMessage.password}</p>
+
+          {showPassword ? <AiOutlineEye onClick={handleShow} />
+            :
+            <AiOutlineEyeInvisible onClick={handleShow} />
+          }
         </div>
-      </section>
-      <section className="otpBodyRight"></section>
-    </article>
-  );
-};
+      </div>
 
-export default Verification;
+      <div className="signupInputs">
+        <label htmlFor="">Confirm Password</label>
+        <div className="signupPasswordShow">
+          <input type={showConfirmPassword ? "text" : "password"} placeholder='Confirm password'
+            value={confirmPassword}
+            onChange={handleConfirmPassword}
+          />
+          <p className="error">{errorMessage.confirmPassword}</p>
+          {showConfirmPassword ? <AiOutlineEye onClick={handleShowConfirm} />
+            :
+            <AiOutlineEyeInvisible onClick={handleShowConfirm} />
+          }
+        </div>
+      </div>
+
+      <div className="signupCondition">
+        <input type="checkbox" />
+        <p>By signing up you agree to our Terms of Service and <br />Privacy Policy</p>
+      </div>
+      <button onClick={() => setImageShow(true)}>Next</button>
+    </div>
+    <p>Already have an account? <span onClick={loginPage}>Login</span></p>
+  </div>
+  :
+  <div className="imageUploadCard2">
+    <div className="imageUpload2CardWrap">
+      <div className="imageUpload">
+        {!PreviewUrl && 
+          <>
+            <label htmlFor="myfile" className="imageUploadP">
+              Browse Photo
+            </label>
+            <input type="file" id="myfile" name="myfile" hidden
+              onChange={handleProfilePicture}/>
+            <p className="error">{errorMessage.profilePicture}</p>
+          </>
+        }
+        {PreviewUrl && (
+          <div className="previewImageContainer">
+            <img src={PreviewUrl} alt="Profile Preview" className="previewImage" />
+          </div>
+        )}
+      </div>
+      <div className="imageUploadBtns">
+        <button className="backButton" onClick={() => setImageShow(false)}>Back</button>
+        <button onClick={handleRegister}>
+          {isLoading ? 
+            <CirclesWithBar
+              height="30"
+              width="30"
+              color="#219EBC"
+              outerCircleColor="#FB8500"
+              innerCircleColor="#219EBC"
+              barColor="#219EBC"
+              ariaLabel="circles-with-bar-loading"
+              wrapperStyle={{}}
+              wrapperClass=""
+              visible={true}
+            /> :
+            "Register"
+          }
+        </button>
+      </div>
+      <p>Already have an account? <span onClick={loginPage}>Login</span></p>
+    </div>
+  </div>
+  }
+
+
+
+  // import React, { useState, useRef, useEffect } from 'react';
+// import axios from 'axios';
+// import Swal from 'sweetalert2';
+// import { useNavigate } from 'react-router-dom';
+// import GL from '../images/goldLogo.png';
+// import '../pagesCSS/Verification.css';
+// import { CirclesWithBar } from 'react-loader-spinner';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { UserToken } from '../../features/Slice';
+
+// const Verification = () => {
+//   const navigate = useNavigate();
+//   const Dispatch = useDispatch();
+
+//   const homePage = () => {
+//     navigate('/');
+//   };
+
+//   const inputRefs = [useRef(), useRef(), useRef(), useRef()];
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [verificationResult, setVerificationResult] = useState('');
+//   const [countdown, setCountdown] = useState(300);
+//   const [token, setToken] = useState('');
+//   const [userInput, setUserInput] = useState('')
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCountdown((prevCountdown) => prevCountdown - 1);
+//     }, 1000);
+
+//     return () => {
+//       clearInterval(timer);
+//     };
+//   }, []);
+
+//   const formatTime = (time) => {
+//     const minutes = Math.floor(time / 60);
+//     const seconds = time % 60;
+//     return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+//   };
+
+//   const handleInputChange = (index, value) => {
+//     if (value.length === 1 && index < inputRefs.length - 1) {
+//       inputRefs[index + 1].current.focus();
+//     }
+//     setUserInput(prevInput => prevInput + value);
+//   };
+
+//   const handleVerification = async (userInput, userToken) => {
+//     setIsLoading(true);
+//     try {
+//       // Make a request to verify the user input (OTP)
+//       const response = await axios.post(
+//         'https://finsworthpro.onrender.com/api/verify',
+//         { userInput },
+//         {
+//           headers: {
+//             Authorization: `Bearer ${userToken}`,
+//             'Content-Type': 'application/json'
+//           }
+//         }
+//       );
+  
+//       // If the verification is successful
+//       if (response.status === 200) {
+//         Dispatch(UserToken(response.data.token));
+  
+//         Swal.fire({
+//           title: 'Account verified Successfully!',
+//           text: `${response.data.message}`,
+//           icon: 'success',
+//           showCancelButton: false,
+//           confirmButtonColor: '',
+//           allowOutsideClick: false,
+//         });
+  
+//         // Redirect the user to the login page
+//         navigate('/login');
+//       } else {
+//         // If verification failed, show error message
+//         Swal.fire({
+//           icon: 'error',
+//           title: 'Error',
+//           text: 'Verification failed!',
+//           color: 'red'
+//         });
+//         setVerificationResult('Error verifying user input.');
+//       }
+//     } catch (error) {
+//       console.error('Error verifying user input:', error.message);
+//       Swal.fire({
+//         icon: 'error',
+//         title: 'Error',
+//         text: 'Failed to verify user input!',
+//         color: 'red'
+//       });
+//       setVerificationResult('Error verifying user input.');
+//     }
+//     finally {
+//       setIsLoading(false);
+//     }
+//   };
+  
+//   // Call handleVerification function with the userInput (OTP) and userToken
+//   handleVerification(userInput, UserToken);
+  
+//   // const handleResendOTP = async () => {
+//   //   try {
+//   //     const response = await axios.post('https://finsworthpro.onrender.com/api/resendOtp', {}, {
+//   //       headers: {
+//   //         Authorization: `Bearer ${token}`
+//   //       }
+//   //     });
+//   //     if (response.data.success) {
+//   //       Swal.fire({
+//   //         title: 'Success',
+//   //         text: 'OTP has been resent successfully!',
+//   //         icon: 'success',
+//   //         confirmButtonText: 'OK'
+//   //       });
+//   //     } else {
+//   //       Swal.fire({
+//   //         title: 'Error',
+//   //         text: response.data.message || 'Failed to resend OTP!',
+//   //         icon: 'error',
+//   //         confirmButtonText: 'OK'
+//   //       });
+//   //     }
+//   //   } catch (error) {
+//   //     console.error('Error resending OTP:', error.message);
+//   //     Swal.fire({
+//   //       title: 'Error',
+//   //       text: 'Failed to resend OTP!',
+//   //       icon: 'error',
+//   //       confirmButtonText: 'OK'
+//   //     });
+//   //   }
+//   // };
+  
+
+//   useEffect(() => {
+//     const fetchToken = async () => {
+//       try {
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/resendOtp');
+//         const fetchedToken = response.data.token;
+//         setToken(fetchedToken);
+//       } catch (error) {
+//         console.error('Error fetching token:', error.message);
+//       }
+//     };
+
+//     fetchToken();
+//   }, []);
+
+//   return (
+//     <article className="otpBody">
+//       <section className="otpBodyLeft">
+//         <img src={GL} alt="logo" onClick={homePage} />
+//       </section>
+//       <section className="otpBodyMiddle">
+//         <div className="otpCard">
+//           <div className="otpCardUp">
+//             <h3>Sign Up</h3>
+//             <h5>Verify your account</h5>
+//             <p>We've sent a One Time Password(OTP) to <br />**********@gmail.com</p>
+//           </div>
+//           <div className="otpCardDown">
+//             <h6>{formatTime(countdown)}</h6>
+
+//             <div className="otpCardInputs">
+//               {inputRefs.map((ref, index) => (
+//                 <input
+//                   key={index}
+//                   ref={ref}
+//                   maxLength={1}
+//                   onChange={(e) => handleInputChange(index, e.target.value)}
+//                 />
+//               ))}
+//             </div>
+//             <p>Didn't receive an OTP? <span>RESEND</span></p>
+//             <button onClick={handleVerification}>
+//               {isLoading ?
+//                 <CirclesWithBar
+//                   height="30"
+//                   width="30"
+//                   color="#219EBC"
+//                   outerCircleColor="#FB8500"
+//                   innerCircleColor="#219EBC"
+//                   barColor="#219EBC"
+//                   ariaLabel="circles-with-bar-loading"
+//                   wrapperStyle={{}}
+//                   wrapperClass=""
+//                   visible={true}
+//                 /> :
+//                 "Verify"
+//               }
+//             </button>
+//             <span style={{ color: "red" }}>{verificationResult}</span>
+//           </div>
+//         </div>
+//       </section>
+//       <section className="otpBodyRight"></section>
+//     </article>
+//   );
+// };
+
+// export default Verification;

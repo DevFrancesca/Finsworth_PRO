@@ -9,6 +9,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate()
   const label = Expense.map ((e)=>e.month)
   const dataset = Expense.map ((e)=>e.amount)
+  console.log(dataset, label, "My dataset")
   const adminHistory =()=>{
     navigate('/adminhistory')
   }
@@ -28,7 +29,7 @@ const AdminDashboard = () => {
         </div>
 
         <div className="adminBodyLeftMid">
-          < Bar data={{labels:label, datasets:[{label:"Expenses", data:dataset,}]}}/>
+          {/* < Bar data={{labels:label, datasets:[{label:"Expenses", data:dataset,}]}}/> */}
         </div>
 
         <div className="adminBodyLeftDown">

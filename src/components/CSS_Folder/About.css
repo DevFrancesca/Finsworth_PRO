@@ -1,247 +1,174 @@
-.Aboutwrapper{
+.AboutUsPage{
     width: 100%;
-    height: 100%;
+    height: 200vh;
+    background-color:white;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:white;
-    margin-top: 10px;
 }
-.Aboutcontenthold{
-    width: 74%;
-    height: 90%;
-    background-color:white;
+.AboutUsWrapper{
+    width: 90%;
+    height: 100%;
+    /* background-color: orange; */
 }
 .Aboutname{
     width: 100%;
-    height: 20%;
+    height: 15%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:white;
+    /* background-color:green; */
     gap: 10px;
-}
-/* .Aboutname h1{
-    
-} */
-/* .Aboutname p{
+   
 
-} */
-.Aboutcardholder{
+}
+.Aboutname h1{
+    font-size: 32px;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: #252422;
+    
+}
+.Aboutname p{
+    font-size: 15px;
+    font-style: normal;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #252422;
+    text-align: center;
+
+}
+.AboutCardHolder{
     width: 100%;
     height: 85%;
+    background-color: orangered;
     display: flex;
-    /* background-color: green; */
-    /* align-items: center;
-    justify-content: space-between; */
+    flex-wrap: wrap;
 }
-.ABoutLeft{
+.AboutLeft{
     width: 50%;
-    height: 100%;
-    /* background-color: yellow; */
+    height: 50%;
+    background-color: #023047;;
+    border: 1px solid #023047 ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AboutTextLeft{
+    width: 70%;
+    height: 80%;
+    background-color: #023047;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 20px;
+    padding-inline: 10px;
 }
-.ABoutLeft h1{
-    font-size: 30px;
+    .AboutTextLeft h1{
+    font-size: 25px;
     font-style: normal;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    color: #252422;
-
- 
+    color: whitesmoke;
+    
 }
-.ABoutLeft p{
-    font-family: "Poppins", sans-serif;
+.AboutTextLeft P{
+    font-size: 15px;
     font-style: normal;
+    font-family: "Poppins", sans-serif;
     font-weight: 400;
-    color: #252422;
-
- 
+    color:whitesmoke;
+    
 }
-.ABoutRight{
-    width:50%;
-    height: 100%;
-    /* background-color: blue; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-inline: 70px;
-    gap: 10px;
-}
-.ABoutRightCon{
-    width: 100%;
-    height: 70px;
-    /* background-color: yellow; */
-    display: flex;
-}
-.ABoutRightConLeft{
-    width: 30%;
-    height: 100%;
-    /* background-color: red; */
-   
-}
-.ABoutRightConLeft img{
+.AboutImgLeft{
     width: 100%;
     height: 100%;
-    object-fit: contain;
-}
-.ABoutRightConRight{
-    width: 70%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    
-}
-.ABoutRightConRight h3{
-    color: #252422;
-    font-style: normal;
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    text-align: center;
-}
-@media only screen and (max-width: 500px) {
-    .Aboutwrapper{
-        width: 100%;
-        height: 100vh;
-    }
-    .Aboutcontenthold{
-        width: 100%;
-        height: max-content;
-    }
-    
-    .Aboutname {
-       width: 100%;
-        
-    }
-    .Aboutname h1{
-        font-size: 20px;
-        font-style: normal;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        color: #252422;
-        
-    }
-    .Aboutname p{
-        font-size: 10px;
-        font-style: normal;
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        color: #252422;
-        text-align: center;
+    /* background-color: aqua; */
 
-    }
-    .Aboutcardholder{
-        flex-direction: column;
-        padding-inline: 20px;
-        text-align: center;
-        /* align-items: flex-start;
-        justify-content: center; */
-    }
-    .ABoutRight{
-        width: 100%;
-        /* background-color: yellow; */
-        padding-inline: 0px;
-    }
-    
-    .ABoutLeft{
-        width: 100%;  
-    }
-    .ABoutRightCon{
-        width: 100%;  
-        /* background-color: blue; */
-        justify-content: flex-start;
-    }
-    .ABoutRightConLeft{
-        width: 20%; 
-        height: 100%; 
-        align-items: flex-start;
-        justify-content: flex-start;
-        /* background-color: red; */
-    }
-    .ABoutRightConLeft img{
-        width: 100%;  
-    }
-    
 }
-@media only screen and (max-width: 320px) {
-    .Aboutwrapper{
+.AboutImgLeft img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+@media screen and (max-width: 320px) {
+    .AboutUsPage{
         width: 100%;
         height: 100%;
     }
-    .Aboutcontenthold{
+    .AboutUsWrapper{
         width: 100%;
-        height: max-content;
     }
-    
-    .Aboutname {
-       width: 100%;
-        
+    .Aboutname{
+        width: 100%;
+        margin-top: 10px;
     }
     .Aboutname h1{
         font-size: 20px;
-        font-style: normal;
-        font-family: "Poppins", sans-serif;
-        font-weight: 700;
-        color: #252422;
-        
     }
     .Aboutname p{
         font-size: 10px;
-        font-style: normal;
-        font-family: "Poppins", sans-serif;
-        font-weight: 500;
-        color: #252422;
-        text-align: center;
-
     }
-    .Aboutcardholder{
-        flex-direction: column;
-        padding-inline: 20px;
-        text-align: center;
-        /* align-items: flex-start;
-        justify-content: center; */
-    }
-    .ABoutRight{
+    .AboutCardHolder{
         width: 100%;
-        /* background-color: yellow; */
-        padding-inline: 0px;
+        flex-wrap: wrap;
     }
-    
-    .ABoutLeft{
-        width: 100%; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; 
+    .AboutLeft{
+        width: 100%;
     }
-    .ABoutLeft h1{
+    .AboutTextLeft {
+        width: 80%;
+    }
+    .AboutImgLeft {
+        width: 80%;
+    }
+    .AboutTextLeft h1 {
         font-size: 20px;
-        text-align: center;  
     }
-    .ABoutRightCon{
-        width: 100%;  
-        /* background-color: blue; */
-        justify-content: flex-start;
+    .AboutTextLeft p {
+        font-size: 10px;
     }
-    .ABoutRightConLeft{
-        width: 20%; 
-        height: 100%; 
-        align-items: flex-start;
-        justify-content: flex-start;
-        /* background-color: red; */
+}
+@media screen and (max-width: 414px) {
+    .AboutUsPage{
+        width: 100%;
+        height: 100%;
     }
-    .ABoutRightConRight h3{
-        font-size: 15px;
-        
+    .AboutUsWrapper{
+        width: 100%;
     }
-    .ABoutRightConLeft img{
-        width: 100%;  
+    .Aboutname{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .Aboutname h1{
+        font-size: 20px;
+    }
+    .Aboutname p{
+        font-size: 10px;
+    }
+    .AboutCardHolder{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .AboutLeft{
+        width: 100%;
+    }
+    .AboutTextLeft {
+        width: 80%;
+    }
+    .AboutImgLeft {
+        width: 80%;
+    }
+    .AboutTextLeft h1 {
+        font-size: 20px;
+    }
+    .AboutTextLeft p {
+        font-size: 10px;
     }
 }

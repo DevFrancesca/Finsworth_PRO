@@ -3,13 +3,17 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 import GL from '../images/goldLogo.png';
-import '../pagesCSS/OtpPage.css';
+import '../pagesCSS/Verification.css';
 import { CirclesWithBar } from 'react-loader-spinner';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { UserToken } from '../../features/Slice';
 
-const OtpPage = () => {
+const Verification = () => {
   const navigate = useNavigate();
+  const Dispatch = useDispatch();
+  const data = useSelector(state => state.mySlice.userToken);
+  console.log(data, "userdata")
+
   const homePage = () => {
     navigate('/');
   };
@@ -18,7 +22,8 @@ const OtpPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [verificationResult, setVerificationResult] = useState('');
   const [countdown, setCountdown] = useState(300);
-  const [token, setToken] = useState('')
+  const [token, setToken] = useState('');
+  const [userInput, setUserInput] = useState(Array(4).fill(''));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,71 +45,89 @@ const OtpPage = () => {
     if (value.length === 1 && index < inputRefs.length - 1) {
       inputRefs[index + 1].current.focus();
     }
+    const newInput = [...userInput];
+    newInput[index] = value;
+    setUserInput(newInput);
   };
 
-  const handleVerification = async () => {
+  const handleVerification = async (userInput, UserToken) => {
     setIsLoading(true);
+    // console.log( {userInput})
 
     try {
-      const otp = inputRefs.map(ref => ref.current.value).join(`https://finsworthpro.onrender.com/api/verify/${UserToken}`);
-
-      const Dispatch = useDispatch()
-
-      console.log(otp)
-
-      const response = await axios.post(url, {otp},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
+      const response = await axios.post(
+        `https://finsworthpro.onrender.com/api/verify/${UserToken}`,
+        {userInput}
       );
-      Dispatch(UserToken(response.data.token))
+      if (response.status === 200) {
+        // Dispatch(UserToken(response.data.token));
 
-      setIsLoading(false);
-      Swal.fire({
-        title: 'Account verified Successfully!',
-        text: `${response.data.message}`,
-        icon: 'success',
-        showCancelButton: false,
-        confirmButtonColor: '',
-        allowOutsideClick: false,
-      });
+        Swal.fire({
+          title: 'Account verified Successfully!',
+          text: `${response.data.message}`,
+          icon: 'success',
+          showCancelButton: false,
+          confirmButtonColor: '',
+          allowOutsideClick: false,
+        });
 
-      if (response.data.verified) {
-        setVerificationResult('Account verified successfully.');
+        navigate('/login');
       } else {
-        setVerificationResult('Account verification failed.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Verification failed!',
+          color: 'red'
+        });
+        setVerificationResult('Error verifying user input.');
       }
-
-      navigate('/login')
     } catch (error) {
+      console.error('Error verifying user input:', error.message);
       Swal.fire({
         icon: 'error',
-        title: error.response.message,
-        text: 'Account verification failed!',
+        title: 'Error',
+        text: 'Failed to verify user input!',
         color: 'red'
       });
-      console.error('Error verifying account:', error.message);
-      setVerificationResult('Error verifying account.');
+      setVerificationResult('Error verifying user input.');
+    }
+    finally {
+      setIsLoading(false);
+    }
+  };
+  
+  const handleVerifyButtonClick = async () => {
+    try {
+      await handleVerification(userInput.join(''), data?.payload);
+    } catch (error) {
+      console.error('Error verifying user input:', error.message);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Failed to verify user input!',
+        color: 'red'
+      });
+      setVerificationResult('Error verifying user input.');
     }
   };
 
-  useEffect(() => {
-    
-    const fetchToken = async () => {
-      try {
-        // Fetching token from your backend or local storage
-        const response = await axios.get('https://finsworthpro.onrender.com/api/resendOtp');
-        const fetchedToken = response.data.token;
-        setToken(fetchedToken);
-      } catch (error) {
-        console.error('Error fetching token:', error.message);
-      }
-    };
+  const fetchToken = async () => {
+    try {
+      const response = await axios.post('https://finsworthpro.onrender.com/api/resendOtp', {
+        headers: {
+          Authorization: `Bearer ${UserToken}`,
+          'Content-Type': 'application/json'
+        }
+      });
+      const fetchedToken = response.data.token;
+      setToken(fetchedToken);
+    } catch (error) {
+      console.error('Error fetching token:', error.message);
+    }
+  };
+  // useEffect(() => {
 
-    fetchToken();
-  }, []);
+  // }, []);
 
   return (
     <article className="otpBody">
@@ -131,8 +154,8 @@ const OtpPage = () => {
                 />
               ))}
             </div>
-            <p>Didn't receive an OTP? <span>RESEND</span></p>
-            <button onClick={handleVerification}>
+            <p>Didn't receive an OTP? <span onClick={() => fetchToken()}>RESEND</span></p>
+            <button onClick={handleVerifyButtonClick}>
               {isLoading ?
                 <CirclesWithBar
                   height="30"
@@ -158,4 +181,5 @@ const OtpPage = () => {
   );
 };
 
-export default OtpPage;
+export default Verification;
+
