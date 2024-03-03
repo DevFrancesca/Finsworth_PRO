@@ -18,7 +18,8 @@ import ContactPage from './components/body/ContactPage'
 import ForgotPassword from './components/pages/ForgotPassword'
 import NewPassword from './components/pages/NewPassword'
 import About from './components/body/About'
-import Verification from './components/pages/Verification'
+// import Verification from './components/pages/Verification'
+import OtpPage from './components/pages/OtpPage'
 
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
-        <Route path='/verification'element={<Verification/>}/>
+        <Route path='/otppage'element={<OtpPage/>}/>
         <Route path= '/contactus' element={<ContactPage/>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>

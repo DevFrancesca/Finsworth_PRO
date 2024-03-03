@@ -1,0 +1,113 @@
+.otpBody{
+    width: 100%;
+    height: 100vh;
+    background-color: #FFFDFD;
+    display: flex;
+}
+.otpBodyLeft{
+    width: 20%;
+    height: 100%;
+    display: flex;
+}
+.otpBodyLeft > img{
+    width: 80%;
+    height: 20%;
+    object-fit: contain;
+}
+.otpBodyMiddle{
+    width: 60%;
+    height: 100%;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.otpCard{
+    width: 55%;
+    height: 60%;
+    background-color: #FFFDFD;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.otpCardUp{
+    width: 90%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column
+}
+.otpCardUp > h3{
+    color: #023047;
+}
+.otpCardUp > p{
+    font-size: 13px;
+    color: #023047;
+    font-weight: 100;
+}
+.otpCardDown{
+    width: 80%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.otpCardInputs{
+    width: 40%;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.otpCardInputs > input{
+    width: 20%;
+    height: 100%;
+    padding: 7px;
+    border-radius: 2px;
+    outline: none;
+    border: 1px solid lightgray;
+    font-size: 10px;
+}
+.otpCardInputs > input:hover{
+    border: 1px solid #FB8500;
+}
+.otpCardDown > p{
+    font-size: 13px;
+    color: #023047;
+}
+.otpCardDown > p > span{
+    color: #FB8500;
+    cursor: pointer;
+}
+.otpCardDown > p > span:hover{
+    color: #c46800;
+}
+.otpCardDown > button{
+    width: 55%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #023047;
+    border: none;
+    border-radius: 8px;
+    color: #FFFDFD;
+    cursor: pointer;
+    transition: all 260ms ease;
+    transform: scale(1);
+}
+.otpCardDown > button:hover{
+    color: #FB8500;
+    transform: scale(0.9);
+}
+
+.otpBodyRight{
+    width: 20%;
+    height: 100%;
+    /* background-color: aqua; */
+}
