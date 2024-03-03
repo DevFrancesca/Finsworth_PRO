@@ -41,11 +41,11 @@
     justify-content: space-evenly;
     align-items: center;
 }
-.logo-navs > nav{
+/* .logo-navs > nav{
     font-size: 10px;
     color: #FFFDFD;
     text-decoration: none;
-}
+} */
 .navLogo{
     width: 30%;
     height: 50%;
@@ -61,12 +61,12 @@
 .active{
     text-decoration: none;
     color: #FB8500;
-    font-size: 10px;
+    font-size: 12px;
 }
 .inActive{
     text-decoration: none;
     color: #FFFDFD;
-    font-size: 10px;
+    font-size: 12px;
 }
 
 
@@ -89,7 +89,7 @@
 .bottomNavigations > nav{
     cursor: pointer;
     color: #FFFDFD;
-    font-size: 10px;
+    font-size: 12px;
 }
 .toggleMode{
     width: 80%;

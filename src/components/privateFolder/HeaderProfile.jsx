@@ -13,9 +13,9 @@ const HeaderProfile = () => {
         <h5>FINSWORTH PRO</h5>
       </section>
       <section className="adminHeaderRight">
-        <div className="adminHeaderNotiImg">
+        {/* <div className="adminHeaderNotiImg">
           <FaBell/>
-        </div>
+        </div> */}
         <h5>Francesca</h5>
         <div className="adminHeaderImg">
           <CiBellOn/>

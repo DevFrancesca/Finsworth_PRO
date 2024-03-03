@@ -101,7 +101,7 @@ const Signup = () => {
       
       Swal.fire({
         title: 'Sign Up Successful!',
-        text: `${response.data.message}`,
+        text: 'You have successfully signed up! Please check mail for verification.',
         icon: 'success',
         showCancelButton: false,
         confirmButtonColor: '',

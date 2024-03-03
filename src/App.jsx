@@ -7,7 +7,6 @@ import Layout from './components/privateFolder/Layout'
 import AdminDashboard from './components/privateFolder/superAdmin/superJSXFolder/AdminDashboard'
 import AdminMenu from './components/privateFolder/superAdmin/superJSXFolder/AdminMenu'
 import AdminHistory from './components/privateFolder/superAdmin/superJSXFolder/AdminHistory'
-import AdminNotification from './components/privateFolder/superAdmin/superJSXFolder/AdminNotification'
 import CreateBudget from './components/privateFolder/superAdmin/superJSXFolder/CreateBudget'
 import AdminExpenses from './components/privateFolder/superAdmin/superJSXFolder/AdminExpenses'
 import Settings from './components/privateFolder/superAdmin/superJSXFolder/Settings'
@@ -19,6 +18,7 @@ import ContactPage from './components/body/ContactPage'
 import ForgotPassword from './components/pages/ForgotPassword'
 import NewPassword from './components/pages/NewPassword'
 import About from './components/body/About'
+import Verification from './components/pages/Verification'
 
 
 const App = () => {
@@ -30,6 +30,7 @@ const App = () => {
         <Route path='/aboutus' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
+        <Route path='/verification'element={<Verification/>}/>
         <Route path= '/contactus' element={<ContactPage/>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>
@@ -40,7 +41,6 @@ const App = () => {
           <Route path='/admindashboard' element={<AdminDashboard/>}/>
           <Route path='/adminmenu' element={<AdminMenu/>}/>
           <Route path='/adminhistory' element={<AdminHistory/>}/>
-          <Route path='/adminnotification' element={<AdminNotification/>}/>
           <Route path='/createbudget' element={<CreateBudget/>}/>
           <Route path='/adminexpenses' element={<AdminExpenses/>}/>
           <Route path='/settings' element={<Settings/>}/>

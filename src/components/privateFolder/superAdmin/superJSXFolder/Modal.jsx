@@ -49,6 +49,9 @@ const Modal = ({ handleCancel }) => {
       console.error('Error fetching data:', error);
         
      }
+     finally{
+      setIsLoading(false)
+    }
   }
 
   return (

@@ -12,49 +12,54 @@ const ForgotPassword = () => {
   const homePage =()=>{
     navigate('/')
   }
-  const [email, setEmail] = useState("")
-  const [isLoading, setIsLoading] = useState(false)
+  const [email, setEmail] = useState('')
+    const [isLoading, setIsLoading] = useState(false)
+    const [ErrorMessage, setErrorMessage] = useState({
+        email : ""
+    })
 
 
-  const handleForgotEmail = (e)=>{
-    setEmail(e.target.value)
-  }
+    
+    const handleForgotEmail = (e)=>{
+        setEmail(e.target.value)
+        setErrorMessage({...ErrorMessage,email: ''})
+    }
+
 
   const url = 'https://finsworthpro.onrender.com/api/forgotPassword'
+  const forgotData = {email}
   
-  const handleForgotPassword = async () =>{
-    setIsLoading(true)
-    try{
-      const forgotData = new FormData()
-      forgotData.append('email', email)
-
-      const response = await axios.get(url, forgotData, {
-        headers: {
-          'Content-Type': 'multipart/forgot-data'
-        }
-      })
-      setIsLoading(false)
-      Swal.fire({
-        title: 'Successful!',
-        text: `${response.data.message}`,
-        icon: 'success',
-        showCancelButton: false,
-        confirmButtonColor: '',
-        allowOutsideClick: false
-      })
-      console.log('Data:', response.data);
-      navigate('/newpassword')
-
-    } catch(error){
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...!',
-        text: 'user with this email is not found',
-      })
-
-      console.error('Error fetching data:', error);
+  const handleForgetPassword = async (e)=>{
+    if(!email){
+        setErrorMessage({
+            email : !email ?  "Email is Required" : ''
+        })
+        return;
     }
-  }
+
+    try{
+        setIsLoading(true)
+        const res = await axios.post(url,forgotData)
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: `${res.data.message}`,
+            showConfirmButton: false,
+            timer: 2000
+          });
+          console.log(res);
+    }
+    catch(error){
+      Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error}`,
+        });
+      }
+      finally{
+          setIsLoading(false)
+      }
+}
 
   return (
     <div className='forgotBody'>
@@ -69,12 +74,10 @@ const ForgotPassword = () => {
             <p>Please enter your email address. You will receive<br/> a link to create a new password</p>
             <div className="ForgotPasswordInput">
               <label htmlFor="">Email</label>
-              <input type="text" 
-              value={email}
-              onChange={handleForgotEmail}
-              />
+              <input type="text"  onChange={handleForgotEmail}/>
+              <p className="error">{ErrorMessage.email}</p>
             </div>
-            <button onClick={handleForgotPassword}>
+            <button onClick={handleForgetPassword}>
             {
                isLoading ? 
                 <CirclesWithBar

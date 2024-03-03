@@ -61,7 +61,7 @@ const AdminMenu = () => {
             <div className="navLogo">
               <CiBellOn/>
             </div>
-            <NavLink to='/adminnotification' className={({isActive})=> isActive? "active" : "inActive"}>NOTIFICATION</NavLink>
+            <NavLink to='/adminhistory' className={({isActive})=> isActive? "active" : "inActive"}>HISTORY</NavLink>
             <div className="navLogo"></div>
           </div>
           
@@ -95,7 +95,7 @@ const AdminMenu = () => {
             <nav>LOGOUT</nav>
             <div className="bottomNavLogo"></div>
           </div>
-          <nav>HIDE SIDE BAR</nav>
+          {/* <nav>HIDE SIDE BAR</nav> */}
         </section>
         
       </div>

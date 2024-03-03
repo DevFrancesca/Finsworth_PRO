@@ -65,14 +65,12 @@ const Login = () => {
     try{
 
       const response = await axios.post(url, loginData,)
-      // headers: {
-      //   'Content-Type': 'multipart/login-data'
-      // }
       
       Dispatch(Userdata(response.data.data))
       Dispatch(UserToken(response.data.token))
 
-    console.log(res);
+    console.log(response);
+    
       Swal.fire({
         title: 'Login Successful!',
         text: `${response.data.message}`,
@@ -85,9 +83,8 @@ const Login = () => {
       })
       console.log(response.data.loginData);
       navigate('/admindashboard')
-      setIsLoading(false)
 
-      
+      setIsLoading(false)
     } catch (error) {
       const errorMessage = error.response ? error.response.data.error : 'An error occurred'
       Swal.fire({
@@ -100,6 +97,7 @@ const Login = () => {
 
       console.error(errorMessage);
     }
+
     finally{
       setIsLoading(false)
     }

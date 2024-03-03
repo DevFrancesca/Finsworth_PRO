@@ -26,10 +26,12 @@ const NewPassword = () => {
           <div className="newPasswordWrap">
             <h3>Create Password?</h3>
             <p>Your new password must be different from your previous<br/> password.</p>
+
             <div className="newPasswordInput">
               <label htmlFor="">Password</label>
-              <input type="text" />
+              <input type="password" />
             </div>
+
             <button onClick={loginPage}>Reset Password</button>
           </div>
         </div>
