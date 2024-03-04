@@ -40,7 +40,7 @@ const HeaderDrop =(
     <div className='Header'>
       <div className='leftHeader'>
         <div className='leftimg'>
-        <img src="./src/components/images/goldLogo.png" alt="logo"/>
+        <img src="./goldLogo.png" alt=""/>
         </div>
 
       </div>

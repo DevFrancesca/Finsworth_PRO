@@ -11,7 +11,7 @@ const Footer = () => {
      
     <div className='footerBody'>
       <div className='FooterUp'>
-        <h2>Can’t find what you are looking for?</h2>
+        <h2>Can't find what you are looking for?</h2>
         <span className='span'>
           <p>If you have any questions, feel free to contact us</p>
           <p style={{color:"#FB8500"}}> finsworthpro@gmail.com</p>
@@ -22,7 +22,7 @@ const Footer = () => {
       <div className='footerBodyWrap'>
         <div className='FooterContainer'>
           <h1>Finsworth</h1>
-          <p>Take your finances to the next level!!! <br />Don’t hesitate, money matters</p>
+          <p>Take your finances to the next level!!! <br />Don't hesitate, money matters</p>
           <div className='FooterConBox'>
             <div className='FooterConBoxCircle'>
             <FaInstagram  style={{color:"white"}}/>
@@ -53,11 +53,11 @@ const Footer = () => {
         <h1>Our Partners</h1>
         <span className='mySpan'>
           <p>The Curve Africa</p>
-          <img src="./src/components/images/tcaaaa.png" alt="" style={{width:"40px"}} />
+          <img src="./tcaaaa.png" alt="" style={{width:"40px"}} />
         </span>
         <span className='mySpan'>
           <p>koraPay</p>
-          <img src="./src/components/images/kora.png" alt="" style={{width:"30px"}}/>
+          <img src="./kora.png" alt="" style={{width:"30px"}}/>
         </span>
 
         </div>
