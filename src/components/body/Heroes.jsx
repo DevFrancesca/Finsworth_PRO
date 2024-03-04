@@ -1,6 +1,7 @@
 import React from 'react'
 import '../CSS_Folder/Heroes.css'
 import { useNavigate } from 'react-router-dom'
+import 'animate.css'
 
 const Heroes = () => {
   const navigate = useNavigate()

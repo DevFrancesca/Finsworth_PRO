@@ -20,6 +20,7 @@ import NewPassword from './components/pages/NewPassword'
 import About from './components/body/About'
 import Verification from './components/pages/Verification'
 import Payment from './components/privateFolder/superAdmin/superJSXFolder/Payment'
+import Private from './components/privateFolder/Private'
 // import OtpPage from './components/pages/Verification'
 
 
@@ -39,6 +40,7 @@ const App = () => {
         
 
 
+        
         <Route element={<Layout/>}>
           <Route path='/admindashboard' element={<AdminDashboard/>}/>
           <Route path='/adminmenu' element={<AdminMenu/>}/>
@@ -51,8 +53,9 @@ const App = () => {
           <Route path='/changepassword' element={<ChangePassword/>}/>
           <Route path='/addaccount' element={<AddAccount/>}/>
           <Route path='/paymentpage' element={<Payment/>}/>
-        </Route>
-      </Routes>
+          </Route>
+        
+          </Routes>
      </BrowserRouter>
     </>
   )

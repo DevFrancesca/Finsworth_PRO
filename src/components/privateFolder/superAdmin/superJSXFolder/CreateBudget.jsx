@@ -5,6 +5,7 @@ import { FaEdit } from 'react-icons/fa';
 import Modal from './Modal';
 import axios from 'axios';
 import ExpenseModal from './ExpenseModal';
+// import { RiAddCircleLine } from "react-icons/ri";
 
 
 
@@ -100,23 +101,35 @@ const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
     showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
   }
 
-  <div className="showBudgetCreatedWrap">
+<div className="showBudgetCreatedWrap">
   {budgets?.budgets?.length > 0 ? (
-  budgets?.budgets?.map((budget) => (
-    <div className="showBudgetCreated" key={budget.id}>
-      <h4>₦ {budget.amount}</h4>
-      <span>{budget.budgetType}</span>
-      <div className="showBudgetRmv">
-        <RiDeleteBinLine/>
-        <FaEdit/>
+    budgets?.budgets?.map((budget) => (
+      <div className="showBudgetCreated" key={budget.id}>
+        <section className="budgetAmount">
+          <h4>₦ {budget.amount}</h4>
+        </section>
+
+        <section className="budgetType">
+          <span>{budget.budgetType}</span>
+        </section>
+        
+        <div className="showBudgetRmv">
+          <RiDeleteBinLine/>
+          <FaEdit/>
+        </div>
+        <section className="expenseButton">
+          <button onClick={() => { setShowExpenseModal(true); setBudgetId(budget.id) }}>Add expense</button>
+        </section>
+        
       </div>
-      <button onClick={() =>  setBudgetId(budget.id)}>Add expense</button>
-    </div>
-  ))
-) : (
-  <p>No budgets available</p>
-)}
-  </div>
+    ))
+  ) : (
+    <p key="no-budgets-message">No budgets available</p>
+  )}
+</div>
+
+
+  {/* <p>No budgets available</p> */}
 
   {showInput && <Modal handleCancel={() => handleCancel()} />}
 </div>

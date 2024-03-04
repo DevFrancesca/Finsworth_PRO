@@ -27,7 +27,7 @@
 .leftimg{
     width: 100px;
     height: 100%;
-
+    cursor: pointer;
 }
 .leftimg img{
     width: 100%;
@@ -49,12 +49,14 @@
     font-weight: 500;
     color: #333333;
     cursor: pointer;
-  
+}
+.midHeader > h3:hover{
+    animation: pulse;
+    animation-duration: 1s;
 }
 .rightHeader{
     width: 30%;
     height: 100%;
-    /* background-color: blueviolet; */
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -76,6 +78,11 @@
     font-weight: 500;
     font-size: 12px;
 }
+.login:hover{
+    animation: pulse;
+    animation-duration: 1s;
+    background-color: #ea7d01;
+}
 .signup{
     width: 110px;
     height: 40px;
@@ -91,6 +98,10 @@
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 12px;
+}
+.signup:hover{
+    animation: pulse;
+    animation-duration: 1s;
 }
 .rightimg{
     width: 100px;

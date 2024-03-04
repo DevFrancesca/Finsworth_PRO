@@ -48,7 +48,7 @@ const ContactPage = () => {
         </div>
         <div className='ContactUsPageWrapperRight'>
           <div className='WrapperRightImgHolder'>
-            <img src="/src/components/images/ContactUs.jpg" alt="" />
+            <img src="./ContactUs.jpg" alt="" />
           </div>
         </div>
 

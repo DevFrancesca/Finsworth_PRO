@@ -49,11 +49,11 @@ const Footer = () => {
         <h1>Our Partners</h1>
         <span className='mySpan'>
           <p>The Curve Africa</p>
-          <img src="./src/components/images/tcaaaa.png" alt="" style={{width:"40px"}} />
+          <img src="./tcaaaa.png" alt="" style={{width:"40px"}} />
         </span>
         <span className='mySpan'>
           <p>koraPay</p>
-          <img src="./src/components/images/kora.png" alt="" style={{width:"30px"}}/>
+          <img src="./kora.png" alt="" style={{width:"30px"}}/>
         </span>
 
         </div>

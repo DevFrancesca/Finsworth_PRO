@@ -21,6 +21,9 @@ const signupPage =() =>{
 const ContactPage =() =>{
   navigate('/contactus')
 }
+const homePage =() =>{
+  navigate('/')
+}
 
 // const handleClick = () =>{
 //   setClick(true)
@@ -37,7 +40,7 @@ const HeaderDrop =(
     <div className='Header'>
       <div className='leftHeader'>
         <div className='leftimg'>
-        <img src="./src/components/images/goldLogo.png" alt="logo"/>
+        <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
         </div>
 
       </div>

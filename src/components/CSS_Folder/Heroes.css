@@ -36,18 +36,25 @@
     color: #6D6D6B;
 }
 .getStarted{
-    width: 150px;
-    height: 40px;
+    width: 180px;
+    height: 65px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
     background-color: #fb8500;
     font-family: "Poppins", sans-serif;
     color: white;
+    font-size: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    margin-top: 30px;
+}
+.getStarted:hover{
+    animation: heartBeat;
+    animation-duration: 3s;
+    background-color: #023047;
 }
 .featureswrapper{
     width: 100%;

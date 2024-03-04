@@ -1,40 +1,36 @@
 import React, { useState } from 'react';
-import '../superCSSFolder/ExpenseModal.css'
+import '../superCSSFolder/ExpenseModal.css';
 import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
 
+const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
+  console.log("Received budgetId:", budgetId);
 
-const ExpenseModal = ({ isOpen, onClose, onSubmit, budgetId }) => {
   const [isLoading, setIsLoading] = useState(false);
-  console.log(budgetId)
+  console.log(budgetId);
 
   const [newExpense, setNewExpense] = useState({
-      category: '',
-      amount: 0,
-      description: '',
-      budgetId
+    category: '',
+    amount: 0,
+    description: '',
+    budgetId
   });
+  console.log(newExpense);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setNewExpense({ ...newExpense, [name]: value });
   };
-  // useEffect(() => {
-  //   // Fetching expenses from the API when the component mounts
-  //   const url = 'https://finsworthpro.onrender.com/api/create-expenses'
-
-  //   handleSubmitExpenses();
-  // }, []);
-  const url = 'https://finsworthpro.onrender.com/api/create-expenses'
-    
 
   const handleSubmitExpenses = async (event) => {
     event.preventDefault();
-    // onSubmit(newExpense);
-    console.log(newExpense)
+    console.log(newExpense);
 
-    setIsLoading(true)
+    setIsLoading(true);
     try {
+      const url = `https://finsworthpro.onrender.com/api/create-expenses/${budgetId}`;
+      console.log("API URL:", url);
+
       const response = await axios.post(url, newExpense);
       setNewExpense([...expenses, response.data]);
       setNewExpense({
@@ -43,13 +39,13 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit, budgetId }) => {
         description: '',
         budgetId
       });
-      setIsLoading(false)
-      console.log(response.data)
-  
+      
+      console.log(response.data);
     } catch (error) {
       console.error('Error adding expense:', error);
+    } finally {
+      setIsLoading(false);
     }
-   
   };
 
   return (
@@ -74,13 +70,7 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit, budgetId }) => {
             placeholder="Amount"
             required
           />
-          <input
-            type="date"
-            name="date"
-            value={newExpense.date}
-            onChange={handleInputChange}
-            required
-          />
+         
           <input
             name="category"
             value={newExpense.category}
@@ -88,21 +78,21 @@ const ExpenseModal = ({ isOpen, onClose, onSubmit, budgetId }) => {
             required
           />
           <button type="submit">
-          {isLoading ?
-                <CirclesWithBar
-                  height="30"
-                  width="30"
-                  color="#219EBC"
-                  outerCircleColor="#FB8500"
-                  innerCircleColor="#219EBC"
-                  barColor="#219EBC"
-                  ariaLabel="circles-with-bar-loading"
-                  wrapperStyle={{}}
-                  wrapperClass=""
-                  visible={true}
-                /> :
-                "Add Expenses"
-              }
+            {isLoading ?
+              <CirclesWithBar
+                height="30"
+                width="30"
+                color="#219EBC"
+                outerCircleColor="#FB8500"
+                innerCircleColor="#219EBC"
+                barColor="#219EBC"
+                ariaLabel="circles-with-bar-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+              /> :
+              "Add Expenses"
+            }
           </button>
         </form>
       </div>

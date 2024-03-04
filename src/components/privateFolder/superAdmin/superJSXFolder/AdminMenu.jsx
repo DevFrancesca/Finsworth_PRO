@@ -19,7 +19,7 @@ const AdminMenu = () => {
     <div className='menuBody'>
       <div className="menuTop">
         <div className="menuLogo">
-          <img src="./src/components/images/goldLogo.png" alt="logo" onClick={homePage}/>
+          <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
         </div>
 
         <section className="navigations">

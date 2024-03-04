@@ -8,6 +8,7 @@ import axios from 'axios'
 import { CirclesWithBar } from 'react-loader-spinner'
 import { useDispatch } from 'react-redux'
 import { Userdata, UserToken } from '../../features/Slice'
+// import { IoIosArrowRoundBack } from "react-icons/io";
 
 
 const Login = () => {
@@ -68,6 +69,7 @@ const Login = () => {
       
       Dispatch(Userdata(response.data.data))
       Dispatch(UserToken(response.data.token))
+      localStorage.setItem("token", JSON.stringify(token))
 
     console.log(response);
     
@@ -106,7 +108,7 @@ const Login = () => {
   return (
     <div className='loginBody'>
       <div className="loginImg">
-        <img src={GL} alt="logo" onClick={homePage}/>
+        <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
       </div>
       
      <div className="loginMiddle">

@@ -1219,3 +1219,240 @@
 // };
 
 // export default Verification;
+
+
+// import React, { useContext, useEffect, useState } from 'react';
+// import '../superCSSFolder/CreateBudget.css';
+// import { RiDeleteBinLine } from 'react-icons/ri';
+// import { FaEdit } from 'react-icons/fa';
+// import Modal from './Modal';
+// import axios from 'axios';
+// import ExpenseModal from './ExpenseModal';
+
+
+
+// const CreateBudget = () => {
+//   const [showInput, setShowInput] = useState(false);
+//   const [showExpenseModal, setShowExpenseModal] = useState(false);
+//   const [budgetId, setBudgetId] = useState('');
+//   const [budgets, setBudgets] = useState([]);
+
+//   const getToken = JSON.parse(localStorage.getItem('token'));
+
+//   const handleCreate = () => {
+//     setShowInput(true);
+//   };
+
+//   const handleCancel = () => {
+//     setShowInput(false);
+//   };
+
+// const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
+
+//   const handleGetAllBudget = async () => {
+    
+//     try {
+//       const response = await axios.get(url, {
+//         headers: {
+//           Authorization: `Bearer ${getToken}`,
+//         },
+//       });
+//       console.log(response);
+
+//       if (response.data) {
+//         setBudgets(response.data); 
+//         handleCancel();
+//       }
+//     } catch (error) {
+//       console.error('Error fetching data:', error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     handleGetAllBudget();
+//   }, []);
+
+//   console.log(budgetId);
+
+//   return (
+//     <div className='createBudgetBody'>
+//       <div className="createBudgetTop">
+
+//         <div className="createHeaderLeft">
+//           <section className='allCreateBudgetHeader'>
+//             <p>Total Budget</p>
+//             <span>₦ 0.00</span>
+//           </section>
+//         </div>
+
+//         <div className="createHeaderMiddle">
+//           <section className='CreatedHeaderMiddleTop'>
+//             <h5>Jan</h5>
+//           </section>
+//           <span>1st Jan to 31st Jan</span>
+//         </div>
+
+//         <div className="createHeaderRight">
+//           <section className='CreateBudgetHeaderRightOne'>
+//             <p>Amount Spent</p>
+//             <span>₦ 0.00</span>
+//           </section>
+
+//           <section className='CreateBudgetHeaderRightTwo'>
+//             <p>Budget Balance</p>
+//             <span>₦ 0.00</span>
+//           </section>
+          
+//           <article className="createBudget" onClick={handleCreate}>
+//               <p>Create +</p>
+//             </article>
+//         </div>
+//       </div>
+
+
+//       <div className="createBudgetDown">
+//   <section className="createBudgetDownHeader">
+//     <p>Budget</p>
+//     <span>Amount</span>
+//     <p>Date</p>
+//   </section>
+
+//   {/* <ExpenseModal /> */}
+
+//   {
+//     showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
+//   }
+
+//   <div className="showBudgetCreatedWrap">
+//   {budgets?.budgets?.length > 0 ? (
+//   budgets?.budgets?.map((budget) => (
+//     <div className="showBudgetCreated" key={budget.id}>
+//       <h4>₦ {budget.amount}</h4>
+//       <span>{budget.budgetType}</span>
+//       <div className="showBudgetRmv">
+//         <RiDeleteBinLine/>
+//         <FaEdit/>
+//       </div>
+//       <button onClick={() =>  setBudgetId(budget.id)}>Add expense</button>
+//     </div>
+//   ))
+// ) : (
+//   <p>No budgets available</p>
+// )}
+//   </div>
+
+//   {showInput && <Modal handleCancel={() => handleCancel()} />}
+// </div>
+//     </div>
+//   )
+// }
+
+// export default CreateBudget
+
+
+// import React, { useState } from 'react';
+// import '../superCSSFolder/ExpenseModal.css'
+// import axios from 'axios';
+// import { CirclesWithBar } from 'react-loader-spinner';
+
+
+// const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
+//   const [isLoading, setIsLoading] = useState(false);
+//   console.log(budgetId)
+
+//   const [newExpense, setNewExpense] = useState({
+//       category: '',
+//       amount: 0,
+//       description: '',
+//       budgetId
+//   });
+//   console.log(newExpense)
+
+
+//   const handleInputChange = (event) => {
+//     const { name, value } = event.target;
+//     setNewExpense({ ...newExpense, [name]: value });
+//   };
+ 
+//   const url = `https://finsworthpro.onrender.com/api/create-expenses/${budgetId}`;
+    
+
+//   const handleSubmitExpenses = async (event) => {
+//     event.preventDefault();
+//     console.log(newExpense)
+
+//     setIsLoading(true)
+//     try {
+//       const response = await axios.post(url, newExpense);
+//       setNewExpense([...expenses, response.data]);
+//       setNewExpense({
+//         category: '',
+//         amount: 0,
+//         description: '',
+//         budgetId
+//       });
+//       console.log(response.data)
+  
+//     } catch (error) {
+//       console.error('Error adding expense:', error);
+//     }
+//     finally{
+//       setIsLoading(false)
+
+//     }
+   
+//   };
+
+//   return (
+//     <div className={`modal1 ${isOpen ? 'open' : ''}`}>
+//       <div className="modal1-content">
+//         <span className="close1" onClick={onClose}>&times;</span>
+//         <h2>Add Expense</h2>
+//         <form onSubmit={handleSubmitExpenses}>
+//           <input
+//             type="text"
+//             name="description"
+//             value={newExpense.description}
+//             onChange={handleInputChange}
+//             placeholder="Description"
+//             required
+//           />
+//           <input
+//             type="text"
+//             name="amount"
+//             value={newExpense.amount}
+//             onChange={handleInputChange}
+//             placeholder="Amount"
+//             required
+//           />
+      
+//           <input
+//             name="category"
+//             value={newExpense.category}
+//             onChange={handleInputChange}
+//             required
+//           />
+//           <button type="submit">
+//           {isLoading ?
+//                 <CirclesWithBar
+//                   height="30"
+//                   width="30"
+//                   color="#219EBC"
+//                   outerCircleColor="#FB8500"
+//                   innerCircleColor="#219EBC"
+//                   barColor="#219EBC"
+//                   ariaLabel="circles-with-bar-loading"
+//                   wrapperStyle={{}}
+//                   wrapperClass=""
+//                   visible={true}
+//                 /> :
+//                 "Add Expenses"
+//               }
+//           </button>
+//         </form>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default ExpenseModal;
