@@ -21,7 +21,7 @@ const Team = () => {
                 </div>
                 <div className="Team">
                     <div className="TeamUp">
-                        <img src="./Dera.jpg" alt=""/>
+                    <img src="./Dera.jpg" alt=""/>
                     </div>
                     <div className="TeamDown">
                         <h5>Chidera Akude</h5>
@@ -30,7 +30,7 @@ const Team = () => {
                 </div>
                 <div className="Team">
                     <div className="TeamUp">
-                        <img src="./Lulu.jpg" alt=""/>
+                    <img src="./Lulu.jpg" alt=""/>
                     </div>
                     <div className="TeamDown">
                         <h5>Agbakwuru Oluchi</h5>
@@ -39,7 +39,7 @@ const Team = () => {
                 </div>
                 <div className="Team">
                     <div className="TeamUp">
-                        <img src="./Loveth.jpg" alt=""/>
+                    <img src="./Loveth.jpg" alt=""/>
                     </div>
                     <div className="TeamDown">
                         <h5>Ameh Loveth</h5>
@@ -48,7 +48,7 @@ const Team = () => {
                 </div>
                 <div className="Team">
                     <div className="TeamUp">
-                        <img src="./Mike.jpg" alt=""/>
+                    <img src="./Mike.jpg" alt=""/>
                     </div>
                     <div className="TeamDown">
                         <h5>Michael Dominic</h5>

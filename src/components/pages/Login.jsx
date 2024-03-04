@@ -118,21 +118,22 @@ const Login = () => {
 
           <div className="loginInputs">
             <label htmlFor="">Email</label>
-            <input type="text"placeholder='e.g agbanzofrancesca@gmail.com' onChange={handleLoginEmail}/>
-            <p className="error">{errorMessage.email}</p>
+            <input type="email"placeholder='e.g agbanzofrancesca@gmail.com' onChange={handleLoginEmail}/>
+            <p className="error" style={{color: "red"}}>{errorMessage.email}</p>
           </div>
 
           <div className="loginInputs">
             <label htmlFor="">Password</label>
             <div className="passwordShow">
               <input type={showPassword ? "text" : "password"} placeholder='enter password' onChange={handleLoginPassword}/>
-              <p className="error">{errorMessage.password}</p>
               {showPassword ? <AiOutlineEye onClick={handleShow}/>
                :
               <AiOutlineEyeInvisible onClick={handleShow}/>
               }
             </div>
           </div>
+          <p className="error"  style={{color: "red"}}>{errorMessage.password}</p>
+              
           
           <div className="forgotPassword">
             <div className="checkContainer">

@@ -21,7 +21,7 @@ const signupPage =() =>{
 const ContactPage =() =>{
   navigate('/contactus')
 }
-const homePage =() =>{
+const HomePage =() =>{
   navigate('/')
 }
 
@@ -40,12 +40,13 @@ const HeaderDrop =(
     <div className='Header'>
       <div className='leftHeader'>
         <div className='leftimg'>
-        <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
+        <img src="./src/components/images/goldLogo.png" alt="logo"/>
         </div>
 
       </div>
       <div className='midHeader'>
-        <h3 id='Home'>Home</h3>
+        {/* <h3>Home</h3> */}
+        <Link to ='heroo' spy={true} smooth={true} offset={50} duration={500}><h3 onClick={HomePage}>Home</h3></Link>
         <Link to ='Abttt' spy={true} smooth={true} offset={50} duration={500}><h3 >About Us</h3></Link>
         <Link to ='Teams' spy={true} smooth={true} offset={50} duration={500}><h3>Team</h3></Link>
         

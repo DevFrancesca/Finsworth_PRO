@@ -10,13 +10,15 @@
 .TeamBodyWrapper{
     width: 80%;
     height: 100%;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 .TeamBodyWrapUp{
     width: 100%;
     height: 20%;
     background-color: #023047;
     padding-inline: 25px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 .TeamBodyWrapUp h1{
     color:white;
@@ -51,8 +53,8 @@
 }
 .TeamUp{
     width: 100%;
-    height: 90%;
-    background-color: #fb8500;
+    height: 75%;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -66,14 +68,14 @@
 }
 .TeamDown{
     width: 100%;
-    height: 10%;
+    height: 25%;
     background-color: #023047;
     padding-inline: 20px;
     border-bottom-left-radius: 50px;
     color: white;
 }
 .TeamDown h5{
-    font-size: 10px;
+    font-size: 13px;
     color: #252422;
     font-family: "Poppins", sans-serif;
     font-weight: 700;

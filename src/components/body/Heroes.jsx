@@ -9,7 +9,7 @@ const Heroes = () => {
   navigate('/login')
 }
   return (
-  <div className="herobodywrapper">
+  <div className="herobodywrapper" id='heroo'>
   <div className="heropagewrapper">
       <div className="contenthold">
           <h1>Track Your <br />Expenses To Save Money</h1>
@@ -24,52 +24,45 @@ const Heroes = () => {
               <div className="card">
                   <div className="imghold">
                       <div className="img">
-                          <img src="/secure.png" alt="img" />
+                      <img src="./S.png.jpg" alt=""/>
                       </div>
                   </div>
                   <div className="name">
                       <h3>SECURE</h3>
-                  </div>
-                  <div className="writings">
+                
                       <p>Your data is always safe <br />wherever your are and what <br />ever device you are using</p>
                   </div>
               </div>
               <div className="card">
               <div className="imghold">
                       <div className="img">
-                          <img src="/wallet.png" alt="img" />
+                      <img src="./U.png.jpg" alt=""/>
                       </div>
                   </div>
                   <div className="name">
                       <h3>PAINLESS BUDGET</h3>
-                  </div>
-                  <div className="writings">
                       <p>It takes seconds to record <br />daily transactions. Put them <br />into clear visualized <br />categories such as expenses</p>
                   </div>
               </div>
               <div className="card">
               <div className="imghold">
                       <div className="img">
-                          <img src="/mobile.png" alt="img" />
+                        <img src="./G.png.jpg" alt=""/>
                       </div>
                   </div>
                   <div className="name">
                       <h3>MOBILE ACCESS</h3>
-                  </div>
-                  <div className="writings">
                       <p>Safely navigate through <br />various devices on the go <br />and in real time</p>
                   </div>
               </div>
               <div className="card">
               <div className="imghold">
                       <div className="img">
-                          <img src="./expenses.png" alt="img" />
+                        <img src="./H.png.jpg" alt=""/>
                       </div>
                   </div>
                   <div className="name">
                       <h3>EXPENSE TRACKING</h3>
-                  </div>
-                  <div className="writings">
                       <p>Real-time expense tracking <br />app  that allow financial <br />institutes to monitor their <br />expenses as it occurs</p>
                   </div>
               </div>

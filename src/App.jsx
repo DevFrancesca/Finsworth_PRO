@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom"
 import Body from './components/body/Body'
 import Login from './components/pages/Login'
 import Signup from './components/pages/Signup'
@@ -21,6 +21,7 @@ import About from './components/body/About'
 import Verification from './components/pages/Verification'
 import Payment from './components/privateFolder/superAdmin/superJSXFolder/Payment'
 import Private from './components/privateFolder/Private'
+import Team from './components/body/Team'
 // import OtpPage from './components/pages/Verification'
 
 
@@ -37,8 +38,8 @@ const App = () => {
         <Route path= '/contactus' element={<ContactPage/>}/>
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>
+        <Route path='/teams' element={<Team/>}/>
         
-
 
         
         <Route element={<Layout/>}>

@@ -12,14 +12,13 @@ const Subscribe = () => {
         <div className="SubscribePageWrapper">
             <div className="SubscribePageWrapperUp">
                 <h1>SUBSCRIPTION PLAN</h1>
-                <p>Choose Your Subscription Plan</p>
 
             </div>
             <div className="SubscribePageWrapperDown">
                 <div className='SubscribeCon'>
                     <div className='SubscribeConUp'>
                         <h1>N0</h1>
-                        <p>Free</p>
+                        <p>Free Plan</p>
                     </div>
                     <div className='SubscribeConDown'>
                     <p>. 30 days free trial</p>
@@ -34,7 +33,7 @@ const Subscribe = () => {
                 <div className='SubscribeCon'>
                     <div className='SubscribeConUp'>
                         <h1>N9,000</h1>
-                        <p>Monthly</p>
+                        <p>Monthly </p>
                     </div>
                     <div className='SubscribeConDown'>
                     <p>. 30 days free trial</p>
@@ -49,7 +48,7 @@ const Subscribe = () => {
                 <div className='SubscribeCon'>
                     <div className='SubscribeConUp'>
                         <h1>N108,000</h1>
-                        <p>Monthly</p>
+                        <p>Yearly Plan</p>
                     </div>
                     <div className='SubscribeConDown'>
                     <p>. 30 days free trial</p>
@@ -61,7 +60,11 @@ const Subscribe = () => {
                         
                     </div>
                 </div>
+                
+
             </div>
+
+
         </div>
       
     </div>
