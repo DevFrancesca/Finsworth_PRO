@@ -22,7 +22,6 @@ const [ show, setShow] = useState(false)
       <About />
       <Team/>
       <Subscribe/>
-
       <Footer/>
     
     </div>
