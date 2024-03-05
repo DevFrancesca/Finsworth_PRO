@@ -1,15 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../CSS_Folder/About.css'
+import AOS from "aos"
+import 'aos/dist/aos.css';
 
 const About = () => {
+
+  useEffect(() =>{
+    AOS.init({duration:1000})
+  },[]);
   return (
-              <div className='AboutUsPage' id="Abttt" >
-                <div className='AboutUsWrapper'>
+              <div className='AboutUsPage' id="Abttt">
+                <div className='AboutUsWrapper' data-aos="fade-down">
                   <div className="Aboutname">
-                    <h1>ABOUT US</h1>
+                    <h1>ABOUT <span>US</span> </h1>
                     <p>This expense management services is dedicated in helping you rein in costs while making management of your business easier and less stressful.</p>
                   </div>
-                  <div className="AboutCardHolder">
+                  <div className="AboutCardHolder" data-aos="fade-down">
                     <div className="AboutLeft">
                       <div className='AboutTextLeft'>
                         <h1>Finsworth Expense Management</h1>

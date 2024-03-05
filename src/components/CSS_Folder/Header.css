@@ -6,7 +6,8 @@
     position: sticky;
     justify-content: space-between;
     top: 0%;
-    box-shadow: rgb(0, 0, 0, 0.35)0px 5px 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    z-index: 9000000;
 }
 .HeaderDRop{
     width: 100%;
@@ -67,21 +68,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-style: normal;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 12px;
+    transition: all 350ms ease-in;
 }
 .login:hover{
     animation: pulse;
     animation-duration: 1s;
-    background-color: #ef8205;
+    background-color: #cb6e04dd;
+    color: #fff;
 
-    }
+ }
 .signup{
     width: 110px;
     height: 40px;
