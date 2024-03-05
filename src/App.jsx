@@ -23,6 +23,7 @@ import Team from './components/body/Team'
 import ScrollToTop from './ScrollToTop'
 import CreateUser from './components/privateFolder/superAdmin/superJSXFolder/CreateUser'
 import UserPage from './components/privateFolder/superAdmin/superJSXFolder/UserPage'
+import ManagerSignup from './components/privateFolder/accountManager/accountJSXFolder/ManagerSignup'
 
 
 const App = () => {
@@ -40,6 +41,7 @@ const App = () => {
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>
         <Route path='/teams' element={<Team/>}/>
+        <Route path='managersignup' element={<ManagerSignup/>}/>
         
 
         
@@ -55,6 +57,7 @@ const App = () => {
           <Route path='/paymentpage' element={<Payment/>}/>
           <Route path='/userpage' element={<UserPage/>}/>
           <Route path='/createuser' element={<CreateUser/>}/>
+          
           </Route>
         
           </Routes>
