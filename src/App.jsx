@@ -22,13 +22,14 @@ import Verification from './components/pages/Verification'
 import Payment from './components/privateFolder/superAdmin/superJSXFolder/Payment'
 import Private from './components/privateFolder/Private'
 import Team from './components/body/Team'
-// import OtpPage from './components/pages/Verification'
+import ScrollToTop from './ScrollToTop'
 
 
 const App = () => {
   return (
     <>
      <BrowserRouter>
+     <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Body/>}/>
         <Route path='/aboutus' element={<About/>}/>

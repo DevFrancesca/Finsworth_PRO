@@ -64,7 +64,7 @@ const AdminExpenses = () => {
           <h5>Category</h5>
           <p>Amount</p>
           <span>Description</span>
-          <h6>Budget</h6>
+          <h4>BudgetID</h4>
         </article>
       </div>
     </div>

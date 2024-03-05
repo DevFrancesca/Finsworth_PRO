@@ -8,7 +8,7 @@ import axios from 'axios'
 import { CirclesWithBar } from 'react-loader-spinner'
 import { useDispatch } from 'react-redux'
 import { Userdata, UserToken } from '../../features/Slice'
-// import { IoIosArrowRoundBack } from "react-icons/io";
+import { IoIosArrowRoundBack } from "react-icons/io";
 
 
 const Login = () => {
@@ -69,7 +69,7 @@ const Login = () => {
       
       Dispatch(Userdata(response.data.data))
       Dispatch(UserToken(response.data.token))
-      localStorage.setItem("token", JSON.stringify(token))
+      localStorage.setItem("token",response.data.token)
 
     console.log(response);
     
@@ -81,7 +81,7 @@ const Login = () => {
         confirmButtonColor: '',
         allowOutsideClick: false,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500
       })
       console.log(response.data.loginData);
       navigate('/admindashboard')
@@ -114,13 +114,19 @@ const Login = () => {
      <div className="loginMiddle">
       <div className="loginContainer1">
         <div className="loginWrap1">
-          <h3>Login</h3>
+          
+          <div className="loginText">
+            <div className="backIcon">
+            <IoIosArrowRoundBack style={{width: "10%", height: "100%"}} onClick={homePage}/>
+            </div>
+            <h3>Login</h3>
+          </div>
 
           <div className="loginInputs">
             <label htmlFor="">Email</label>
             <input type="email"placeholder='e.g agbanzofrancesca@gmail.com' onChange={handleLoginEmail}/>
-            <p className="error" style={{color: "red"}}>{errorMessage.email}</p>
           </div>
+          <p className="error" style={{color: "red"}}>{errorMessage.email}</p>
 
           <div className="loginInputs">
             <label htmlFor="">Password</label>
@@ -160,59 +166,6 @@ const Login = () => {
                   /> :
                   "Login"
                   }
-          </button>
-        </div>
-        <p>Don't have an account? <span onClick={handleRegister}>Create Account</span></p>
-      </div>
-
-                {/* code snippets for my container2 for media query */}  
-      <div className="loginContainer2">
-        <div className="loginContainer2Logo">
-          <img src={GL} alt="logo" onClick={homePage}/>
-        </div>
-        <div className="loginWrap2">
-          <h3>Login</h3>
-
-          <div className="loginInputs">
-            <label htmlFor="">Email</label>
-            <input type="text" placeholder='e.g agbanzofrancesca@gmail.com'/>
-          </div>
-
-          <div className="loginInputs">
-            <label htmlFor="">Password</label>
-            <div className="passwordShow">
-              <input type={showPassword ? "text" : "password"} placeholder='enter password'/>
-              {showPassword ? <AiOutlineEye onClick={handleShow}/>
-               :
-              <AiOutlineEyeInvisible onClick={handleShow}/>
-              }
-            </div>
-          </div>
-          
-          <div className="forgotPassword">
-            <div className="checkContainer">
-              <input type="checkbox" />
-              <p>Remember me</p>
-            </div>
-            <span onClick={forgotPassword}>Forgotten Password?</span>
-          </div>
-          <button>
-              {
-               isLoading ? 
-                <CirclesWithBar
-                height="30"
-                width="30"
-                color="#219EBC"
-                outerCircleColor="#FB8500"
-                innerCircleColor="#219EBC"
-                barColor="#219EBC"
-                ariaLabel="circles-with-bar-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
-                visible={true}
-                  /> :
-                  "Login"
-                }
           </button>
         </div>
         <p>Don't have an account? <span onClick={handleRegister}>Create Account</span></p>

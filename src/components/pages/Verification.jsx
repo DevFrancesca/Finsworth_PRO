@@ -7,6 +7,7 @@ import '../pagesCSS/Verification.css';
 import { CirclesWithBar } from 'react-loader-spinner';
 import { useDispatch, useSelector } from 'react-redux';
 import { UserToken } from '../../features/Slice';
+import localStorage from 'redux-persist/es/storage';
 
 const Verification = () => {
   const navigate = useNavigate();
@@ -22,7 +23,7 @@ const Verification = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [verificationResult, setVerificationResult] = useState('');
   const [countdown, setCountdown] = useState(300);
-  const [token, setToken] = useState('');
+  const [token, setToken] = useState(localStorage.getItem("token"));
   const [userInput, setUserInput] = useState(Array(4).fill(''));
 
   useEffect(() => {

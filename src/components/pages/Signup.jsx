@@ -145,6 +145,7 @@ const Signup = () => {
           <div className="signupContainer1">
             <div className="signupWrap1">
               <h3>Create Account</h3>
+
               <div className="signupInputs">
                 <label htmlFor="">Company Name</label>
                 <input type="text"
@@ -152,8 +153,8 @@ const Signup = () => {
                   value={company_Name}
                   onChange={handleCompanyName}
                 />
-                <p className="error">{errorMessage.company_Name}</p>
               </div>
+                <p className="error"style={{color: "red"}}>{errorMessage.company_Name}</p>
 
               <div className="signupInputs">
                 <label htmlFor="">Email</label>
@@ -162,8 +163,8 @@ const Signup = () => {
                   value={email}
                   onChange={handleEmail}
                 />
-                <p className="error">{errorMessage.email}</p>
               </div>
+                <p className="error"style={{color: "red"}}>{errorMessage.email}</p>
 
               <div className="signupInputs">
                 <label htmlFor="">Password</label>
@@ -172,7 +173,6 @@ const Signup = () => {
                     value={password}
                     onChange={handlePassword}
                   />
-                  <p className="error">{errorMessage.password}</p>
 
                   {showPassword ? <AiOutlineEye onClick={handleShow} />
                     :
@@ -180,6 +180,7 @@ const Signup = () => {
                   }
                 </div>
               </div>
+              <p className="error"style={{color: "red"}}>{errorMessage.password}</p>
 
               <div className="signupInputs">
                 <label htmlFor="">Confirm Password</label>
@@ -188,13 +189,13 @@ const Signup = () => {
                     value={confirmPassword}
                     onChange={handleConfirmPassword}
                   />
-                  <p className="error">{errorMessage.confirmPassword}</p>
                   {showConfirmPassword ? <AiOutlineEye onClick={handleShowConfirm} />
                     :
                     <AiOutlineEyeInvisible onClick={handleShowConfirm} />
                   }
                 </div>
               </div>
+              <p className="error">{errorMessage.confirmPassword}</p>
 
               <div className="signupCondition">
                 <input type="checkbox" />

@@ -12,14 +12,7 @@
     background-color: #FEF7F7;
     
 }
-/* .showdiv{
-    width: 30%;
-    height: 100%;
-    background-color: blue;
-    left: 0%;
-    z-index: 10;
-    position: absolute;
-} */
+
 .adminBodyLeft{
     width: 70%;
     height: 100%;
@@ -35,27 +28,71 @@
     display: flex;
     align-items: center;
     gap: 2vw;
-    /* justify-content: center; */
+    justify-content: center;
 }
-.dashboardCurrentAmount{
-    width: 18%;
-    height: 80%;
+.totalBudget{
+    width: 25%;
+    height: 100%;
     background-color: #FB8500;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-radius: 5px;
     gap: 5px;
-    border-radius: 4px;
 }
-.dashboardCurrentAmount > p{
-    font-size: 11px;
-    color: #023047;
+.totalBudget > p{
+    font-size: 12px;
+    color: #FFFDFD;
+    font-weight: 600;
 }
-.dashboardCurrentAmount > span{
+.totalBudget > span{
     font-size: 18px;
-    color: #023047;
+    color: #FFFDFD;
 }
+
+.amountSpent{
+    width: 25%;
+    height: 100%;
+    background-color: #FB8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 5px;
+
+}
+.amountSpent > p{
+    font-size: 12px;
+    color: #FFFDFD;
+    font-weight: 600;
+}
+.amountSpent > span{
+    font-size: 18px;
+    color: #FFFDFD;
+}
+.budgetBalance{
+    width: 25%;
+    height: 100%;
+    background-color: #FB8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 5px;
+    gap: 5px;
+}
+.budgetBalance > p{
+    font-size: 12px;
+    color: #FFFDFD;
+    font-weight: 600;
+}
+.budgetBalance > span{
+    font-size: 18px;
+    color: #FFFDFD;
+}
+
 .adminBodyLeftMid{
     width: 100%;
     height: 60%;
@@ -69,30 +106,29 @@
     justify-content: center;
     flex-direction: column;
     padding: 5px;
-    gap: 3px;
+    gap: 10px;
 }
-.adminBodyLeftDown > h5{
+.adminBodyLeftDown > h4{
     cursor: pointer;
 }
-.adminBodyLeftDown > h5:hover{
+.adminBodyLeftDown > h4:hover{
     color: #FB8500;
 }
-.adminBodyLeftDown > h5:hover{
+.adminBodyLeftDown > h4:hover{
     transform: scale(1);
-    /* color: #219EBC; */
     color: #FB8500;
 }
 .adminHistory{
     width: 70%;
-    height: 20px;
+    height: 30px;
     border: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* margin: 5px; */
+    padding: 5px;
 }
 .adminHistory > p{
-    font-size: 13px;
+    font-size: 1rem;
 }
 .adminHistory > span{
     color: #219EBC;

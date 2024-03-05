@@ -11,21 +11,28 @@ const AdminDashboard = () => {
   const dataset = Expense.map ((e)=>e.amount)
   console.log(dataset, label, "My dataset")
   const adminHistory =()=>{
-    navigate('/adminhistory')
+
+    navigate('/adminexpenses')
   }
   return (
     <div className='adminBody'>
       <section className="adminBodyLeft">
       {/* <div className="showdiv"></div> */}
         <div className="adminBodyLeftTop">
-        <article className="dashboardCurrentAmount">
-          <p>Current Balance</p>
-          <span>₦ 0.00</span>
-        </article>
-        <section className="dashboardCurrentAmount">
-          <p>Expenses</p>
-          <span>₦ 0.00</span>
-        </section>
+          <section className='totalBudget'>
+            <p>Total Budget</p>
+            <span>₦ 0.00</span>
+          </section>
+
+          <section className='amountSpent'>
+            <p>Amount Spent</p>
+            <span>₦ 0.00</span>
+          </section>
+
+          <section className='budgetBalance'>
+            <p>Budget Balance</p>
+            <span>₦ 0.00</span>
+          </section>
         </div>
 
         <div className="adminBodyLeftMid">
@@ -33,11 +40,12 @@ const AdminDashboard = () => {
         </div>
 
         <div className="adminBodyLeftDown">
-          <h5 onClick={adminHistory}>Transaction History</h5>
+          <h4 onClick={adminHistory}>Transaction History</h4>
           <div className="adminHistory">
-            <p>Category</p>
-            <span>Amount</span>
-            <p>Date</p>
+            <p>Salary</p>
+            <p>₦20,000</p>
+            <p>Employee's Salary</p>
+            <p>BudgetId</p>
           </div>
         </div>
       </section>

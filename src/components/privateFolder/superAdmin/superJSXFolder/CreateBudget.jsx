@@ -61,26 +61,19 @@ const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
             <p>Total Budget</p>
             <span>₦ 0.00</span>
           </section>
-        </div>
 
-        <div className="createHeaderMiddle">
-          <section className='CreatedHeaderMiddleTop'>
-            <h5>Jan</h5>
-          </section>
-          <span>1st Jan to 31st Jan</span>
-        </div>
-
-        <div className="createHeaderRight">
-          <section className='CreateBudgetHeaderRightOne'>
+          <section className='CreateBudgetHeaderLeftOne'>
             <p>Amount Spent</p>
             <span>₦ 0.00</span>
           </section>
 
-          <section className='CreateBudgetHeaderRightTwo'>
+          <section className='CreateBudgetHeaderLeftTwo'>
             <p>Budget Balance</p>
             <span>₦ 0.00</span>
           </section>
-          
+        </div>
+
+        <div className="createHeaderRight">
           <article className="createBudget" onClick={handleCreate}>
               <p>Create +</p>
             </article>
@@ -124,12 +117,9 @@ const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
       </div>
     ))
   ) : (
-    <p key="no-budgets-message">No budgets available</p>
+    <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
   )}
 </div>
-
-
-  {/* <p>No budgets available</p> */}
 
   {showInput && <Modal handleCancel={() => handleCancel()} />}
 </div>
