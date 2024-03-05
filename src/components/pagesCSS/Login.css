@@ -15,6 +15,7 @@
     width: 20%;
     height: 100%;
     display: flex;
+    z-index: 100;
     @media screen and (max-width: 535px) {
         display: none;
     }
@@ -30,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 100;
     @media screen and (max-width: 768px) {
         width: 80%;
     }
@@ -41,13 +43,14 @@
     width: 43%;
     height: 80%;
     background-color: #FFFDFD;
-    border-radius: 15px;
+    border-radius: 7px;
     /* margin-right: 100px; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
     @media screen and (max-width: 1024px) {
         width: 53%;
     }
@@ -290,4 +293,13 @@
 }
 .loginContainer2 > p > span:hover{
     color: #c46800;
+}
+
+
+.VideoBg {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    /* background: #000; */
 }

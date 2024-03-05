@@ -107,6 +107,11 @@ const Login = () => {
  
   return (
     <div className='loginBody'>
+
+      <div className='VideoBg'>
+      </div>
+
+
       <div className="loginImg">
         <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
       </div>
