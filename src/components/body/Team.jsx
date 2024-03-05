@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../CSS_Folder/Team.css'
+import AOS from "aos"
+import 'aos/dist/aos.css';
 
 const Team = () => {
+
+    useEffect(() =>{
+        AOS.init({duration:1000})
+      },[]);
+
   return (
     <div className='TeamBody' id="Teams">
-        <div className="TeamBodyWrapper">
+        <div className="TeamBodyWrapper" data-aos="fade-left">
             <div className="TeamBodyWrapUp">
                 <h1>Who we are</h1>
                 <p>We are a curated team of experts united by a single goal; to create category <br /> defining brands and and experiences and make impact, shape culture and connect people</p>
