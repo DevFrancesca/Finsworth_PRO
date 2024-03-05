@@ -9,7 +9,6 @@ import { CirclesWithBar } from 'react-loader-spinner'
 import { useDispatch } from 'react-redux'
 import { Userdata, UserToken } from '../../features/Slice'
 // import { IoIosArrowRoundBack } from "react-icons/io";
-import MovB from "../../components/images/vb.mp4";
 
 
 const Login = () => {
@@ -110,9 +109,6 @@ const Login = () => {
     <div className='loginBody'>
 
       <div className='VideoBg'>
-      {/* <video autoplay muted loop > 
-      <source src= {MovB} type="video/mp4" />
-      </video> */}
       </div>
 
 
