@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Scope+One&display=swap");
+
+
 .herobodywrapper{
     width: 100%;
     height: 200vh;
@@ -8,32 +11,66 @@
     height: 50%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: white;
+    /* justify-content: center; */
+    /* background-color: red; */
+    background:linear-gradient(to right, #023047, #023047c5, rgba(2, 48, 71, 0.229)), url("../../../src/components/images/image1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right top;
   }
   .contenthold{
     width: 74%;
     height: 70%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    text-align: center;
+    margin-left: 5%;
+    /* margin-top: 10%; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* background-color: white;  */
+    /* text-align: center; */
     gap: 15px;
   }
-  .contenthold h1{
+  /* .contenthold h1{
     font-size: 54px;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     font-style: normal;
-    color: #023047;
-  }
+    color: #ffffff;
+    text-transform: uppercase;
+  } */
+ 
+
+svg {
+	font-family: "Poppins", sans-serif;
+  /* font-siz60px;px; */
+	width:100%;
+ height: 70%;
+}
+svg text {
+	animation: stroke 5s infinite alternate;
+	stroke-width: 2;
+	stroke: #FFFFFF;
+	font-size: 70px;
+}
+@keyframes stroke {
+	0%   {
+		fill: rgba(251,133,0,0); stroke: rgba(255,255,255,1);
+		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+	}
+	70%  {fill: rgba(251,133,0,0); stroke: rgba(255,255,255,1); }
+	80%  {fill: rgba(251,133,0,0); stroke: rgba(255,255,255,1); stroke-width: 3; }
+	100% {
+		fill: rgba(251,133,0,1); stroke: rgba(255,255,255,0);
+		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+	}
+}
+
   .contenthold P{
-    font-size: 35px;
+    font-size: 25px;
     font-style: normal;
     font-family: "Poppins", sans-serif;
-    color: #6D6D6B;
+    color: #fb8500;
   }
   .getStarted{
     width: 170px;
@@ -53,20 +90,27 @@
   .getStarted:hover{
     animation: heartBeat;
     animation-duration: 4s;
-    background-color: #023047;
+    background-color: white;
+    color: #023047;
     }
+
+
+
+
   .featureswrapper{
     width: 100%;
     height: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#ECECEC;
+    background-color:#FFFFFF;
   }
+
+
   .featurescontenthold{
-    width: 74%;
+    width: 90%;
     height: 90%;
-    background-color:#ECECEC;
+    /* background-color:#ECECEC; */
   }
   .featuresname{
     width: 100%;
@@ -74,21 +118,34 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:#ECECEC;
+    /* background-color:#ECECEC; */
+
+    & h1 {
+      font-family: "Poppins", sans-serif;
+      text-transform: capitalize;
+      color: #023047;
+
+      & span {
+        color:#219EBC;
+      }
+    }
   }
+
   .cardholder{
     width: 100%;
-    height: 85%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* background: #000; */
   }
+
   .card{
     width: 24%;
     height: 70%;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 3px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
   .imghold{
     width: 100%;
@@ -107,12 +164,12 @@
     justify-content: center;
     
   }
-  .img img{
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    
+
+  .Icons{
+   font-size: 100px;
+   color: #219EBC;  
   }
+
   .name{
     width: 100%;
     height: 50%;
