@@ -1,60 +1,73 @@
-import React, { useContext, useState } from 'react';
-import '../superCSSFolder/Modal.css'
+import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
 
-
-
-
-const Modal = ({ handleCancel }) => {
-
-  const getToken = JSON.parse(localStorage.getItem("token"))
+const Modal = ({ handleCancel, handleGetAllBudget }) => {
+  const [budgetToken] = useState(localStorage.getItem('token'));
   const [isLoading, setIsLoading] = useState(false);
-
   const [formData, setFormData] = useState({
-    amount: 0,
+    amount: '',
     budgetType: '',
-   
   });
 
+  // Function to handle input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Function to handle budget creation
+  const handleBudgetSave = async () => {
+    const { amount } = formData;
 
-  const url = 'https://finsworthpro.onrender.com/api/createBudget'
+    // Prepare budget data for the API request
+    const createBudgetData = {
+      amount: +amount,
+      budgetType: formData.budgetType,
+    };
 
-  const handleBudgetSave = async ()=>{
-      const { amount } = formData
-      const createBudget = { ...formData, amount: +amount };
-      console.log('Form data:', createBudget);
+    setIsLoading(true); // Start loading spinner
 
-        setIsLoading(true)
-     try {
-        const response = await axios.post(url, createBudget, {
-            headers: {
-                Authorization: getToken
-              }
-        })
-      setIsLoading(false);
+    try {
+      // Send POST request to create budget
+      const response = await axios.post('https://finsworthpro.onrender.com/api/createBudget', createBudgetData, {
+        headers: {
+          Authorization: `Bearer ${budgetToken}`,
+        },
+      });
 
-        console.log(response)
-        if(response) {
-            handleCancel()
-            handleGetAllBudget()
-        }
-     } catch (error) {
-      console.error('Error fetching data:', error);
-        
-     }
-     finally{
-      setIsLoading(false)
+      setIsLoading(false); // Stop loading spinner
+
+      // Display success message
+      Swal.fire({
+        title: 'Budget creation Successful!',
+        text: response.data.message,
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      // Close the modal and update the list of budgets
+      handleCancel();
+      handleGetAllBudget();
+    } catch (error) {
+      console.error('Error creating budget:', error);
+
+      // Display error message
+      Swal.fire({
+        icon: 'error',
+        text: 'Budget error!',
+        title: error.response?.data?.message || 'Unknown error',
+        color: 'red',
+      });
+    } finally {
+      setIsLoading(false); // Stop loading spinner
     }
-  }
-
-  console.log(getToken)
+  };
 
   return (
     <div className="modal">
@@ -89,7 +102,7 @@ const Modal = ({ handleCancel }) => {
           <div className="buttons">
             <button type="button" className="cancel" onClick={handleCancel}>Cancel</button>
             <button type="button" className="save" onClick={handleBudgetSave}>
-            {isLoading ?
+              {isLoading ?
                 <CirclesWithBar
                   height="30"
                   width="30"

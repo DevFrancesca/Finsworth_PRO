@@ -30,3 +30,6 @@
     align-items: center;
     justify-content: center;
 }
+.adminSettingsDown > h3{
+    color: #FB8500;
+}

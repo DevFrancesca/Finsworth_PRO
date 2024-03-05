@@ -1458,3 +1458,269 @@
 // export default ExpenseModal;
 
 
+
+// import React, { useContext, useEffect, useState } from 'react';
+// import '../superCSSFolder/CreateBudget.css';
+// import { RiDeleteBinLine } from 'react-icons/ri';
+// import { FaEdit } from 'react-icons/fa';
+// import Modal from './Modal';
+// import axios from 'axios';
+// import ExpenseModal from './ExpenseModal';
+// // import { RiAddCircleLine } from "react-icons/ri";
+
+
+
+// const CreateBudget = () => {
+//   const [showInput, setShowInput] = useState(false);
+//   const [showExpenseModal, setShowExpenseModal] = useState(false);
+//   const [budgetId, setBudgetId] = useState('');
+//   const [budgets, setBudgets] = useState([]);
+
+//   const getToken = localStorage.getItem('token');
+
+//   const handleCreate = () => {
+//     setShowInput(true);
+//   };
+
+//   const handleCancel = () => {
+//     setShowInput(false);
+//   };
+
+// const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
+
+//   const handleGetAllBudget = async () => {
+    
+//     try {
+//       const response = await axios.get(url, {
+//         headers: {
+//           Authorization: `Bearer ${getToken}`,
+//         },
+//       });
+//       console.log(response);
+
+//       if (response.data) {
+//         setBudgets(response.data); 
+//         handleCancel();
+//       }
+//     } catch (error) {
+//       console.error('Error fetching data:', error);
+//     }
+//   };
+
+//   useEffect(() => {
+//     handleGetAllBudget();
+//   }, []);
+
+//   console.log(budgetId);
+
+//   return (
+//     <div className='createBudgetBody'>
+//       <div className="createBudgetTop">
+
+//         <div className="createHeaderLeft">
+//           <section className='allCreateBudgetHeader'>
+//             <p>Total Budget</p>
+//             <span>₦ 0.00</span>
+//           </section>
+
+//           <section className='CreateBudgetHeaderLeftOne'>
+//             <p>Amount Spent</p>
+//             <span>₦ 0.00</span>
+//           </section>
+
+//           <section className='CreateBudgetHeaderLeftTwo'>
+//             <p>Budget Balance</p>
+//             <span>₦ 0.00</span>
+//           </section>
+//         </div>
+
+//         <div className="createHeaderRight">
+//           <article className="createBudget" onClick={handleCreate}>
+//               <p>Create +</p>
+//             </article>
+//         </div>
+//       </div>
+
+
+//       <div className="createBudgetDown">
+//   <section className="createBudgetDownHeader">
+//     <p>Budget</p>
+//     <span>Amount</span>
+//     <p>Date</p>
+//   </section>
+
+//   {/* <ExpenseModal /> */}
+
+//   {
+//     showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
+//   }
+
+// <div className="showBudgetCreatedWrap">
+//   {budgets?.budgets?.length > 0 ? (
+//     budgets?.budgets?.map((budget) => (
+//       <div className="showBudgetCreated" key={budget.id}>
+//         <section className="budgetAmount">
+//           <h4>₦ {budget.amount}</h4>
+//         </section>
+
+//         <section className="budgetType">
+//           <span>{budget.budgetType}</span>
+//         </section>
+        
+//         <div className="showBudgetRmv">
+//           <RiDeleteBinLine/>
+//           <FaEdit/>
+//         </div>
+//         <section className="expenseButton">
+//           <button onClick={() => { setShowExpenseModal(true); setBudgetId(budget.id) }}>Add expense</button>
+//         </section>
+        
+//       </div>
+//     ))
+//   ) : (
+//     <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
+//   )}
+// </div>
+
+//   {showInput && <Modal handleCancel={() => handleCancel()} />}
+// </div>
+//     </div>
+//   )
+// }
+
+// export default CreateBudget
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import axios from 'axios';
+
+// const BudgetInfo = () => {
+//   const [totalBudget, setTotalBudget] = useState(0);
+//   const [amountSpent, setAmountSpent] = useState(0);
+//   const [budgetBalance, setBudgetBalance] = useState(0);
+//   const budgetId = '8ijdkldskdsmdm';
+
+//   useEffect(() => {
+//     const fetchTotalBudget = async () => {
+//       try {
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/totalBudget');
+//         if (response.status === 200) {
+//           setTotalBudget(response.data.totalBudget);
+//         } else {
+//           throw new Error('Failed to fetch total budget');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching total budget:', error);
+//       }
+//     };
+
+//     const fetchAmountSpent = async () => {
+//       try {
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/amountSpent', {
+//           params: { budgetId }
+//         });
+//         if (response.status === 200) {
+//           setAmountSpent(response.data.totalAmountSpent);
+//         } else {
+//           throw new Error('Failed to fetch amount spent');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching amount spent:', error);
+//       }
+//     };
+
+//     const fetchBudgetBalance = async () => {
+//       try {
+//         const response = await axios.get('https://finsworthpro.onrender.com/api/budgetBalance', {
+//           headers: {
+//             'Content-Type': 'application/json'
+//           },
+//           data: JSON.stringify({ budgetId })
+//         });
+//         if (response.status === 200) {
+//           setBudgetBalance(response.data.remainingBalance);
+//         } else {
+//           throw new Error('Failed to fetch budget balance');
+//         }
+//       } catch (error) {
+//         console.error('Error fetching budget balance:', error);
+//       }
+//     };
+
+//     fetchTotalBudget();
+//     fetchAmountSpent();
+//     fetchBudgetBalance();
+//   }, []); // Empty dependency array ensures these effects run only once, equivalent to componentDidMount
+
+//   return (
+//     <div>
+//       <section className='totalBudget'>
+//         <p>Total Budget</p>
+//         <span>₦ {totalBudget.toFixed(2)}</span>
+//       </section>
+
+//       <section className='amountSpent'>
+//         <p>Amount Spent</p>
+//         <span>₦ {amountSpent.toFixed(2)}</span>
+//       </section>
+
+//       <section className='budgetBalance'>
+//         <p>Budget Balance</p>
+//         <span>₦ {budgetBalance.toFixed(2)}</span>
+//       </section>
+//     </div>
+//   );
+// };
+
+// export default BudgetInfo;
+
+
+const Modal = ({ handleCancel, handleGetAllBudget }) => {
+  // Your existing code
+
+  const handleBudgetSave = async () => {
+    // Your existing code
+
+    try {
+      const response = await axios.post(
+        url,
+        createBudget,
+        {
+          headers: {
+            Authorization: `Bearer ${budgetToken.trim()}`
+          }
+        }
+      );
+      setIsLoading(false);
+
+      console.log(response);
+      Swal.fire({
+        title: 'Budget creation Successful!',
+        text: `${response.data.message}`,
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        timer: 1500
+      });
+      if (response) {
+        handleCancel();
+        handleGetAllBudget(); // Call handleGetAllBudget after successfully creating a budget
+      }
+    } catch (error) {
+      console.error('Error creating budget:', error);
+      Swal.fire({
+        icon: 'error',
+        text: 'Budget error!',
+        title: error.response.data.message || 'Unknown error',
+        color: 'red'
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Your existing code
+};

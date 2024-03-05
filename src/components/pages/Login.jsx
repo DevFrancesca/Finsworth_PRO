@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../pagesCSS/Login.css'
 import { useNavigate} from 'react-router-dom'
-import GL from '../images/goldLogo.png'
 import { AiOutlineEye,AiOutlineEyeInvisible} from 'react-icons/ai'
 import Swal from 'sweetalert2'
 import axios from 'axios'
@@ -70,6 +69,8 @@ const Login = () => {
       Dispatch(Userdata(response.data.data))
       Dispatch(UserToken(response.data.token))
       localStorage.setItem("token",response.data.token)
+      localStorage.setItem("companyname",response.data.user.company_Name)
+      localStorage.setItem("companynamefirstletter",response.data.user.company_Name.charAt(0).toUpperCase())
 
     console.log(response);
     

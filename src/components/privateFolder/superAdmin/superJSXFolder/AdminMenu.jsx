@@ -6,9 +6,9 @@ import { CiWallet, CiBellOn } from "react-icons/ci";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GiSun } from "react-icons/gi";
 import { MdPayment } from "react-icons/md";
-import { FaHistory } from "react-icons/fa";
-import { LuLogOut } from "react-icons/lu";
+import { GrLogout } from "react-icons/gr";
 import { GiExpense } from "react-icons/gi";
+import { LuUserPlus2 } from "react-icons/lu";
 
 
 const AdminMenu = () => {
@@ -47,13 +47,20 @@ const AdminMenu = () => {
             <NavLink to='/adminexpenses' className={({isActive})=> isActive? "active" : "inActive"}>EXPENSES</NavLink>
           </div>
 
+          <div className="logo-navs">
+            <div className="navLogo">
+              <LuUserPlus2 style={{color:'white'}}/>
+            </div>
+            <NavLink to='/userpage' className={({isActive})=> isActive? "active" : "inActive"}>USER PAGE</NavLink>
+          </div>
+
           {/* <div className="logo-navs">
             <div className="navLogo">
-              <FaHistory style={{color:'white'}}/>
+            <MdPayment style={{color:'white'}}/>
             </div>
-            <NavLink to='/adminhistory' className={({isActive})=> isActive? "active" : "inActive"}>HISTORY</NavLink>
+            <NavLink to='/createuser' className={({isActive})=> isActive? "active" : "inActive"}>CREATE USER</NavLink>
           </div> */}
-
+          
           <div className="logo-navs">
             <div className="navLogo">
             <MdPayment style={{color:'white'}}/>
@@ -84,7 +91,7 @@ const AdminMenu = () => {
 
           <div className="bottomLogo-navs">
             <div className="bottomNavLogo">
-              <LuLogOut style={{color:'white'}}/>
+              <GrLogout style={{color:'white', fontSize: "30px"}}/>
             </div>
             <NavLink to='/logout' className={({isActive})=> isActive? "active" : "inActive"}>LOGOUT</NavLink>
             <div className="bottomNavLogo"></div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../superCSSFolder/AdminExpenses.css';
 import ExpenseModal from './ExpenseModal';
+import axios from 'axios';
 
 const AdminExpenses = () => {
   const [showInput, setShowInput] = useState(false);

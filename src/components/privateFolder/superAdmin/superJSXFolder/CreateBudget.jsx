@@ -1,13 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../superCSSFolder/CreateBudget.css';
-import { RiDeleteBinLine } from 'react-icons/ri';
-import { FaEdit } from 'react-icons/fa';
+// import { RiDeleteBinLine } from 'react-icons/ri';
+// import { FaEdit } from 'react-icons/fa';
 import Modal from './Modal';
 import axios from 'axios';
 import ExpenseModal from './ExpenseModal';
-// import { RiAddCircleLine } from "react-icons/ri";
-
-
 
 const CreateBudget = () => {
   const [showInput, setShowInput] = useState(false);
@@ -15,7 +12,7 @@ const CreateBudget = () => {
   const [budgetId, setBudgetId] = useState('');
   const [budgets, setBudgets] = useState([]);
 
-  const getToken = JSON.parse(localStorage.getItem('token'));
+  const getToken = localStorage.getItem('token');
 
   const handleCreate = () => {
     setShowInput(true);
@@ -35,7 +32,7 @@ const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
           Authorization: `Bearer ${getToken}`,
         },
       });
-      console.log(response);
+      console.log(response.data);
 
       if (response.data) {
         setBudgets(response.data); 
@@ -82,47 +79,52 @@ const url = 'https://finsworthpro.onrender.com/api/getAllBudgets';
 
 
       <div className="createBudgetDown">
-  <section className="createBudgetDownHeader">
-    <p>Budget</p>
-    <span>Amount</span>
-    <p>Date</p>
-  </section>
-
-  {/* <ExpenseModal /> */}
-
-  {
-    showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
-  }
-
-<div className="showBudgetCreatedWrap">
-  {budgets?.budgets?.length > 0 ? (
-    budgets?.budgets?.map((budget) => (
-      <div className="showBudgetCreated" key={budget.id}>
-        <section className="budgetAmount">
-          <h4>₦ {budget.amount}</h4>
+        <section className="createBudgetDownHeader">
+          <p>Amount</p>
+          <span>Budget Type</span>
+          <p>Status</p>
+          <p>Actions</p>
         </section>
 
-        <section className="budgetType">
-          <span>{budget.budgetType}</span>
-        </section>
-        
-        <div className="showBudgetRmv">
-          <RiDeleteBinLine/>
-          <FaEdit/>
+          {/* <ExpenseModal /> */}
+
+          {/* {
+            showExpenseModal && <ExpenseModal onClose={() => setShowExpenseModal(false)} budgetId={budgetId}/>
+          } */}
+          
+          {showInput && <Modal handleCancel={() => handleCancel()} handleGetAllBudget={handleGetAllBudget} />}
+
+            <div className="showBudgetCreatedWrap">
+              {budgets?.budgets?.length > 0 ? (
+                budgets?.budgets?.map((budget) => (
+                  <div className="showBudgetCreated" key={budget.id}>
+                    <section className="budgetAmount">
+                      <h4>₦ {budget.amount}</h4>
+                    </section>
+
+                    <section className="budgetType">
+                      <span>{budget.budgetType}</span>
+                    </section>
+                    
+                    {/* <div className="showBudgetRmv">
+                      <RiDeleteBinLine/>
+                      <FaEdit/>
+                    </div> */}
+                    <div className="budgetCategory"></div>
+
+                    <section className="expenseButton">
+                      {/* <button onClick={() => { setShowExpenseModal(true); setBudgetId(budget.id) }}>Add expense</button> */}
+                    </section>
+                    
+                  </div>
+                ))
+              ) : (
+                <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
+              )}
+            </div>
+
+
         </div>
-        <section className="expenseButton">
-          <button onClick={() => { setShowExpenseModal(true); setBudgetId(budget.id) }}>Add expense</button>
-        </section>
-        
-      </div>
-    ))
-  ) : (
-    <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
-  )}
-</div>
-
-  {showInput && <Modal handleCancel={() => handleCancel()} />}
-</div>
     </div>
   )
 }

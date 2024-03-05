@@ -1,0 +1,76 @@
+.userModal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .user-content {
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 5px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .formContainer{
+    width: 90%;
+    height: 100%;
+  }
+  .form-user {
+    margin-bottom: 15px;
+    height: 40%;
+    font-size: 13px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;    
+    justify-content: center;
+  }
+  
+  .form-user > input{
+    height: 80%;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid lightgray;
+    font-size: 12px;
+  }
+  
+  .btns {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border: none;
+    margin-top: 20px;
+  }
+  
+  .cancel {
+    background-color: #ccc;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+  }
+  
+  .save {
+    background-color: #023047;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 20px;
+
+  }
+  

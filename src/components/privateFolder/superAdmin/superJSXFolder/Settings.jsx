@@ -1,9 +1,7 @@
 import React from 'react'
 import '../superCSSFolder/Settings.css'
 import {Route, Routes, useNavigate} from "react-router-dom"
-import EditProfile from './EditProfile'
-import ChangePassword from './ChangePassword'
-import AddAccount from './AddAccount'
+
 
 const Settings = () => {
   const navigate = useNavigate()
@@ -27,7 +25,7 @@ const Settings = () => {
       </section>
       
       <section className="adminSettingsDown">
-          <h4>This feature will be available soon</h4>
+          <h3>This feature will be available soon</h3>
       </section>
     </div>
   )

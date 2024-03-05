@@ -1,24 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../privateFolder/HeaderProfile.css'
-import { FaBell } from "react-icons/fa";
-import { CiBellOn } from "react-icons/ci";
+// import { FaBell } from "react-icons/fa";
+// import { CiBellOn } from "react-icons/ci";
 
 
 
 const HeaderProfile = () => {
+
+  const [companyName, setCompanyName] = useState(localStorage.getItem("companyname"))
+  const [companyNameFirstLetter, setCompanyNameFirstLetter] = useState(localStorage.getItem("companynamefirstletter"))
   return (
     <div className='adminHeader'>
       <section className="adminHeaderLeft">
         <h4>Welcome!</h4>
-        <h5>FINSWORTH PRO</h5>
+        <h5>{companyName}</h5>
       </section>
       <section className="adminHeaderRight">
-        {/* <div className="adminHeaderNotiImg">
-          <FaBell/>
-        </div> */}
-        <h5>Francesca</h5>
+        {/* <h5>Francesca</h5> */}
         <div className="adminHeaderImg">
-          <CiBellOn/>
+          {/* <CiBellOn/> */}
+          {companyNameFirstLetter}
         </div>
       </section>
     </div>

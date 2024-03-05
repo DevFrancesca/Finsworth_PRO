@@ -115,7 +115,7 @@
 }
 .bottomNavLogo{
     width: 30%;
-    height: 45%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
