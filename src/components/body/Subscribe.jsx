@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../CSS_Folder/Subscribe.css'
 import { useNavigate } from 'react-router-dom'
+import AOS from "aos"
+import 'aos/dist/aos.css';
 
 const Subscribe = () => {
     const navigate = useNavigate()
   const loginPage =() =>{
   navigate('/login')
   }
+
+  
+  useEffect(() =>{
+    AOS.init({duration:1000})
+  },[]);
+
   return (
     <div className='SubscribePage'>
-        <div className="SubscribePageWrapper">
+        <div className="SubscribePageWrapper" data-aos="fade-down">
             <div className="SubscribePageWrapperUp">
-                <h1>SUBSCRIPTION PLAN</h1>
+                <h1>SUBSCRIPTION <span>PLAN</span> </h1>
 
             </div>
             <div className="SubscribePageWrapperDown">
