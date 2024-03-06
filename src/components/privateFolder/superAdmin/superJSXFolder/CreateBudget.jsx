@@ -7,6 +7,7 @@ import axios from 'axios';
 import ExpenseModal from './ExpenseModal';
 import { FcApprove } from "react-icons/fc";
 import { FcDisapprove } from "react-icons/fc";
+import { Link } from 'react-router-dom';
 
 
 const CreateBudget = () => {
@@ -69,8 +70,25 @@ const CreateBudget = () => {
         // handleCancel();
         handleGetAllBudget()
       }
+      Swal.fire({
+        title: 'Budget Approved!',
+        text: `${response.data.message}`,
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonColor: '',
+        allowOutsideClick: false,
+        showConfirmButton: false,
+        timer: 2000
+      })
     } catch (error) {
-      console.error('Error fetching data:', error);
+      Swal.fire({
+        icon: 'error',
+        text: 'error!',
+        // title: errorMessage,
+        title: errorMessage,
+        color: 'red'
+      })
+      console.error(error);
     }
   }
   
@@ -89,17 +107,17 @@ const CreateBudget = () => {
         <div className="createHeaderLeft">
           <section className='allCreateBudgetHeader'>
             <p>Total Budget</p>
-            <span>₦ 0.00</span>
+            <span>₦ 100,000</span>
           </section>
 
           <section className='CreateBudgetHeaderLeftOne'>
             <p>Amount Spent</p>
-            <span>₦ 0.00</span>
+            <span>₦ 10,000</span>
           </section>
 
           <section className='CreateBudgetHeaderLeftTwo'>
             <p>Budget Balance</p>
-            <span>₦ 0.00</span>
+            <span>₦ 20,000</span>
           </section>
         </div>
 
@@ -147,17 +165,20 @@ const CreateBudget = () => {
                       }
                       
                     </div>
+                    
                     <div className="budgetCategory"></div>
 
-                    <section className="expenseButton">
-                      {/* <button onClick={() => { setShowExpenseModal(true); setBudgetId(budget.id) }}>Add expense</button> */}
-                    </section>
+                    <Link className="expenseButton" to={`/adminexpenses/${budget._id}`}>
+                          <p>Add Expense</p>
+                    </Link>
                     
                   </div>
                 ))
-              ) : (
+              ) : 
+              (
                 <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
-              )}
+              )
+              }
             </div>
 
 

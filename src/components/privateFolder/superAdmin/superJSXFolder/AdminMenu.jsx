@@ -36,12 +36,12 @@ const AdminMenu = () => {
             <NavLink to='/createbudget' className={({isActive})=> isActive? "active" : "inActive"}>BUDGET</NavLink>
           </div>
 
-          <div className="logo-navs">
+          {/* <div className="logo-navs">
             <div className="navLogo">
               <GiExpense style={{color:'white'}}/>
             </div>
             <NavLink to='/adminexpenses' className={({isActive})=> isActive? "active" : "inActive"}>EXPENSES</NavLink>
-          </div>
+          </div> */}
 
           <div className="logo-navs">
             <div className="navLogo">

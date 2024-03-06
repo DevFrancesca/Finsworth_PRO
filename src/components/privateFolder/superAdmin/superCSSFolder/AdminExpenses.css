@@ -22,6 +22,15 @@
   align-items: center;
   justify-content: center;
 }
+.adminExpensesBodyUp > button{
+  width: 10%;
+  height: 90%;
+  border: none;
+  background-color: #FB8500;
+  border-radius: 5px;
+  font-size: 15px;
+  color: whitesmoke;
+}
 .adminUpLeft{
   width: 70%;
   height: 98%;
@@ -41,18 +50,38 @@
   height: 80%;
   display: flex;
   align-items: center;
+  gap: 3vh;
+  /* border: 1px solid lightgrey; */
   flex-direction: column;
-  overflow-y: scroll;
-  border: 1px solid lightgrey;
 }
-.expenseCreated{
+.expenseCreatedHeader{
   width: 95%;
   height: 13%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  border-bottom: 1px solid lightgrey;
+  border: 1px solid lightgray;
 }
-.expenseCreated > h5{
-  color: #FB8500;
+.expenseCreated{
+  width: 100%;
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  /* background-color: green; */
 }
+.mappedExpenses{
+  width: 100%;
+  height: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px ;
+  border: 1px solid lightgrey;
+  /* background-color: green; */
+}
+  .mappedExpenses > h5{
+    color: #FB8500;
+  }

@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../superCSSFolder/ExpenseModal.css';
 import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
 
 const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
-  console.log("Received budgetId:", budgetId);
 
   const [isLoading, setIsLoading] = useState(false);
-  console.log(budgetId);
 
   const [newExpense, setNewExpense] = useState({
     category: '',
@@ -15,7 +13,7 @@ const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
     description: '',
     budgetId
   });
-  console.log(newExpense);
+
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -24,29 +22,25 @@ const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
 
   const handleSubmitExpenses = async (event) => {
     event.preventDefault();
-    console.log(newExpense);
 
     setIsLoading(true);
     try {
       const url = `https://finsworthpro.onrender.com/api/create-expenses/${budgetId}`;
-      console.log("API URL:", url);
+    
 
       const response = await axios.post(url, newExpense);
-      setNewExpense([...expenses, response.data]);
-      setNewExpense({
-        category: '',
-        amount: 0,
-        description: '',
-        budgetId
-      });
       
       console.log(response.data);
+      onClose()
     } catch (error) {
       console.error('Error adding expense:', error);
     } finally {
       setIsLoading(false);
     }
   };
+  useEffect(()=>{
+    console.log(isLoading)
+  },[isLoading])
 
   return (
     <div className={`modal1 ${isOpen ? 'open' : ''}`}>

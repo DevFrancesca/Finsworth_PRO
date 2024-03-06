@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route,} from "react-router-dom"
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Body from './components/body/Body'
 import Login from './components/pages/Login'
 import Signup from './components/pages/Signup'
@@ -26,8 +26,8 @@ import ManagerSignup from './components/privateFolder/superAdmin/superJSXFolder/
 
 const App = () => {
   return (
-    <>
-     <BrowserRouter>
+  
+     <Router>
      <ScrollToTop/>
       <Routes>
         <Route path='/' element={<Body/>}/>
@@ -47,18 +47,17 @@ const App = () => {
           <Route path='/admindashboard' element={<AdminDashboard/>}/>
           <Route path='/adminmenu' element={<AdminMenu/>}/>
           <Route path='/createbudget' element={<CreateBudget/>}/>
-          <Route path='/adminexpenses' element={<AdminExpenses/>}/>
+          <Route path='/adminexpenses/:id' element={<AdminExpenses/>}/>
           <Route path='/settings' element={<Settings/>}/>
           <Route path='/headerprofile' element={<HeaderProfile/>}/>
           <Route path='/paymentpage' element={<Payment/>}/>
           <Route path='/userpage' element={<UserPage/>}/>
           <Route path='/createuser' element={<CreateUser/>}/>
-          
           </Route>
-        z
+        
           </Routes>
-     </BrowserRouter>
-    </>
+     </Router>
+    
   )
 }
 

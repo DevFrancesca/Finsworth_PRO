@@ -162,7 +162,7 @@
     color: #219EBC;
     font-weight: 700;
 }
-/* .expenseButton{
+ .expenseButton{
     width: 20%;
     height: 100%;
     display: flex;
@@ -176,7 +176,12 @@
     background-color: #FB8500;
     padding: 8px 12px;
     color: #FFFDFD;
-} */
+    text-decoration: none;
+} 
+
+
+
+
 
 .showBudgetRmv{
     width: 20%;
@@ -187,7 +192,20 @@
     justify-content: space-evenly;
     gap: 5px;
 }
-
+.addExpenses{
+    width: 20%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
+.addExpenses > button{
+    width: 90%;
+    height: 90%;
+    border: none;
+    border-radius: 5px;
+}
     
 /* .showBudgetRmv > img{
     width: 50px;
