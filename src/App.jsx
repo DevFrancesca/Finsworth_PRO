@@ -10,8 +10,6 @@ import CreateBudget from './components/privateFolder/superAdmin/superJSXFolder/C
 import AdminExpenses from './components/privateFolder/superAdmin/superJSXFolder/AdminExpenses'
 import Settings from './components/privateFolder/superAdmin/superJSXFolder/Settings'
 import HeaderProfile from './components/privateFolder/HeaderProfile'
-import EditProfile from './components/privateFolder/superAdmin/superJSXFolder/EditProfile'
-import ChangePassword from './components/privateFolder/superAdmin/superJSXFolder/ChangePassword'
 import ContactPage from './components/body/ContactPage'
 import ForgotPassword from './components/pages/ForgotPassword'
 import NewPassword from './components/pages/NewPassword'
@@ -23,7 +21,7 @@ import Team from './components/body/Team'
 import ScrollToTop from './ScrollToTop'
 import CreateUser from './components/privateFolder/superAdmin/superJSXFolder/CreateUser'
 import UserPage from './components/privateFolder/superAdmin/superJSXFolder/UserPage'
-import ManagerSignup from './components/privateFolder/accountManager/accountJSXFolder/ManagerSignup'
+import ManagerSignup from './components/privateFolder/superAdmin/superJSXFolder/ManagerSignup'
 
 
 const App = () => {
@@ -41,7 +39,7 @@ const App = () => {
         <Route path='/forgotpassword' element={<ForgotPassword/>}/>
         <Route path='/newpassword' element={<NewPassword/>}/>
         <Route path='/teams' element={<Team/>}/>
-        <Route path='managersignup' element={<ManagerSignup/>}/>
+        <Route path='/managersignup' element={<ManagerSignup/>}/>
         
 
         
@@ -52,14 +50,12 @@ const App = () => {
           <Route path='/adminexpenses' element={<AdminExpenses/>}/>
           <Route path='/settings' element={<Settings/>}/>
           <Route path='/headerprofile' element={<HeaderProfile/>}/>
-          <Route path='/editprofile' element={<EditProfile/>}/>
-          <Route path='/changepassword' element={<ChangePassword/>}/>
           <Route path='/paymentpage' element={<Payment/>}/>
           <Route path='/userpage' element={<UserPage/>}/>
           <Route path='/createuser' element={<CreateUser/>}/>
           
           </Route>
-        
+        z
           </Routes>
      </BrowserRouter>
     </>

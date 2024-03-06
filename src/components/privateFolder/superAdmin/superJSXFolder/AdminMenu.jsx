@@ -12,16 +12,12 @@ import { LuUserPlus2 } from "react-icons/lu";
 
 
 const AdminMenu = () => {
-  const navigate = useNavigate()
-
-  const homePage =()=>{
-    navigate('/')
-  }
+ 
   return (
     <div className='menuBody'>
 
       <div className="menuTop">
-        <img src="./goldLogo.png" alt="logo" onClick={homePage}/>
+        <img src="./goldLogo.png" alt="logo"/>
       </div>
 
       <div className="menuMiddle">

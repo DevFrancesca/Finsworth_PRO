@@ -44,13 +44,9 @@ const AdminExpenses = () => {
   return (
     <div className='adminExpensesBody'>
       <div className="adminExpensesBodyUp">
-        <div className="adminUpLeft">
+        
           <button onClick={handleCreate}>Add Expense</button>
-        </div>
-
-        <div className="adminUpRight">
-          <h4>Total Expenses<span> ₦0.00</span></h4>
-        </div>
+        
       </div>
 
       {showInput && (

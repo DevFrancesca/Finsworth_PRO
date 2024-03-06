@@ -12,6 +12,7 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Login = () => {
   const navigate = useNavigate()
+  const getToken = localStorage.getItem('token');
 
   const homePage =()=>{
     navigate('/')
@@ -82,7 +83,7 @@ const Login = () => {
         confirmButtonColor: '',
         allowOutsideClick: false,
         showConfirmButton: false,
-        timer: 1500
+        timer: 2000
       })
       console.log(response.data.loginData);
       navigate('/admindashboard')

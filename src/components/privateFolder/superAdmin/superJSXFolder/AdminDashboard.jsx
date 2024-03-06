@@ -62,7 +62,7 @@ const AdminDashboard = () => {
 
       <section className='amountSpent'>
         <p>Amount Spent</p>
-        <span>₦ {amountSpent.toFixed(2)}</span>
+        <span>₦ 00</span>
       </section>
 
       <section className='budgetBalance'>
