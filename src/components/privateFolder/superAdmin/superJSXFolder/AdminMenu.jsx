@@ -47,15 +47,8 @@ const AdminMenu = () => {
             <div className="navLogo">
               <LuUserPlus2 style={{color:'white'}}/>
             </div>
-            <NavLink to='/userpage' className={({isActive})=> isActive? "active" : "inActive"}>USER PAGE</NavLink>
+            <NavLink to='/createuser' className={({isActive})=> isActive? "active" : "inActive"}>ADD USER</NavLink>
           </div>
-
-          {/* <div className="logo-navs">
-            <div className="navLogo">
-            <MdPayment style={{color:'white'}}/>
-            </div>
-            <NavLink to='/createuser' className={({isActive})=> isActive? "active" : "inActive"}>CREATE USER</NavLink>
-          </div> */}
           
           <div className="logo-navs">
             <div className="navLogo">

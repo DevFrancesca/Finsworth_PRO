@@ -11,6 +11,8 @@ const UserPage = () => {
         <button>Add New User +</button>
       </div>
 
+      {/* <div className="bottomNavLogo"></div> */}
+      
       <div className="manageDown">
         <div className="manageDownWrap">
 

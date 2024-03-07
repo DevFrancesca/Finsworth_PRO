@@ -123,10 +123,10 @@ const CreateBudget = () => {
       <div className="createBudgetTop">
 
         <div className="createHeaderLeft">
-          {/* <section className='allCreateBudgetHeader'>
+          <section className='allCreateBudgetHeader'>
             <p>Total Budget</p>
             <span>₦ 100,000</span>
-          </section> */}
+          </section>
 
           <section className='CreateBudgetHeaderLeftOne'>
             <p>Amount Spent</p>
