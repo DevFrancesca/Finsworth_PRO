@@ -82,13 +82,13 @@ const AdminDashboard = () => {
         </div>
 
         <div className="adminBodyLeftDown">
-          <h4 onClick={expenses}>CATEGORY EXPENSES</h4>
+          {/* <h4 onClick={expenses}>CATEGORY EXPENSES</h4>
           <div className="adminHistory">
             <p>Salary</p>
             <p>₦20,000</p>
             <p>Employee's Salary</p>
             <p>BudgetId</p>
-          </div>
+          </div> */}
         </div>
       </section>
 

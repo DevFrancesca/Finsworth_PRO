@@ -47,7 +47,7 @@
   input[type='text'],
   input[type='date'],
   button[type='submit'] {
-    margin: 5px 0;
+    margin: 10px 0;
     padding: 10px;
     font-size: 16px;
   }
@@ -57,9 +57,13 @@
     color: white;
     border: none;
     cursor: pointer;
+    height: 50%;
   }
   
   button[type='submit']:hover {
     background-color: #45a049;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   

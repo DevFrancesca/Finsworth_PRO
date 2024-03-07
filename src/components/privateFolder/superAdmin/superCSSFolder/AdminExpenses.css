@@ -71,7 +71,7 @@
   height: 80%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
   overflow-y: scroll;
   /* background-color: green; */
@@ -83,6 +83,7 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 10px ;
+  margin: 10px;
   border: 1px solid lightgrey;
   /* background-color: green; */
 }

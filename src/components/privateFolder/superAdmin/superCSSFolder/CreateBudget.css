@@ -142,8 +142,9 @@
     height: 20%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     border-bottom: 1px solid lightgrey;
+    
 }
 .budgetAmount{
     width: 20%;
@@ -167,23 +168,22 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* background-color: red; */
+    /* justify-content: center; */
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 .expenseButton > button{
     border: none;
     font-size: 10px;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     background-color: #FB8500;
     padding: 8px 12px;
     color: #FFFDFD;
     text-decoration: none;
+
 } 
-
-
-
-
 
 .showBudgetRmv{
     width: 20%;

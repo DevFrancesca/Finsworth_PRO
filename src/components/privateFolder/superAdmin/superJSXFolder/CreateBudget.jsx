@@ -165,6 +165,7 @@ const CreateBudget = () => {
               {budgets?.budgets?.length > 0 ? (
                 budgets?.budgets?.map((budget) => (
                   <div className="showBudgetCreated" key={budget._id}>
+                    
                     <section className="budgetAmount">
                       <h4>₦ {budget.amount}</h4>
                     </section>
@@ -184,9 +185,12 @@ const CreateBudget = () => {
 
                     {
                       budget?.approvedByDirector? <Link className="expenseButton" to={`/adminexpenses/${budget._id}`}>
-                      <p>Add Expense</p>
+                      <p style={{color: "green"}}>Add Expense</p>
                       </Link> :
-                        <p>Pending...</p>
+                      <div className="expenseButtonP">
+                        <p style={{color: "red"}}>Pending...</p>
+                      </div>
+                        
                     }
                     
                   </div>

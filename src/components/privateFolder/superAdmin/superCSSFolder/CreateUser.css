@@ -41,6 +41,7 @@
   
   .form-user > input{
     height: 80%;
+    width: 90%;
     outline: none;
     border-radius: 3px;
     border: 1px solid lightgray;

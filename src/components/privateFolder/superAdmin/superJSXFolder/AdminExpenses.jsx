@@ -46,7 +46,7 @@ const AdminExpenses = () => {
     },[])
     useEffect(()=>{
       console.log(expenses)
-    },[expenses])
+    },[])
 
     useEffect(()=>{
       console.log(isLoading)

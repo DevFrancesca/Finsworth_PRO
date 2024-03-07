@@ -4,6 +4,7 @@ import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
 
 const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
+  console.log(budgetId)
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -65,12 +66,9 @@ const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
             required
           />
          
-          <input
-            name="category"
+          <input name="category"
             value={newExpense.category}
-            onChange={handleInputChange}
-            required
-          />
+            onChange={handleInputChange}required style={{margin: "10px 0",  padding: "10px"}}/>
           <button type="submit">
             {isLoading ?
               <CirclesWithBar
