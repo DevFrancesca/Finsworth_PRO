@@ -44,9 +44,9 @@ const AdminExpenses = () => {
     useEffect(()=>{
       handleGetAllExpenses()
     },[])
-    useEffect(()=>{
-      console.log(expenses)
-    },[])
+    // useEffect(()=>{
+    //   expenses
+    // },[])
 
     useEffect(()=>{
       console.log(isLoading)

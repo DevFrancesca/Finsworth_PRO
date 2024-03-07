@@ -37,6 +37,7 @@ const ExpenseModal = ({ isOpen, onClose, budgetId }) => {
       console.error('Error adding expense:', error);
     } finally {
       setIsLoading(false);
+      window.location.reload()
     }
   };
   useEffect(()=>{

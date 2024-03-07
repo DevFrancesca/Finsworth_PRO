@@ -60,7 +60,7 @@ const AdminDashboard = () => {
     <div className='adminBody'>
       <section className="adminBodyLeft">
 
-        <div className="adminBodyLeftTop">
+        {/* <div className="adminBodyLeftTop">
         <section className='totalBudget'>
         <p>Total Budget</p>
         <span>₦ 100,000</span>
@@ -75,7 +75,7 @@ const AdminDashboard = () => {
         <p>Budget Balance</p>
         <span>₦ 20,000</span>
       </section>
-        </div>
+        </div> */}
 
         <div className="adminBodyLeftMid">
           < Bar data={{labels:label, datasets:[{label:"Expenses", data:dataset,}]}}/>
