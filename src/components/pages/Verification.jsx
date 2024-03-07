@@ -11,9 +11,7 @@ import localStorage from 'redux-persist/es/storage';
 
 const Verification = () => {
   const navigate = useNavigate();
-  const Dispatch = useDispatch();
-  const data = useSelector(state => state.mySlice.userToken);
-  console.log(data, "userdata")
+  
 
   const homePage = () => {
     navigate('/');

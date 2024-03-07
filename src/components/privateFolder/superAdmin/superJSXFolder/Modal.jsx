@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import { CirclesWithBar } from 'react-loader-spinner';
+import '../superCSSFolder/Modal.css'
 
 const Modal = ({ handleCancel, handleGetAllBudget }) => {
   const [budgetToken] = useState(localStorage.getItem('token'));
@@ -11,17 +12,17 @@ const Modal = ({ handleCancel, handleGetAllBudget }) => {
     budgetType: '',
   });
 
-  // Function to handle input changes
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Function to handle budget creation
+  
   const handleBudgetSave = async () => {
     const { amount } = formData;
 
-    // Prepare budget data for the API request
+    
     const createBudgetData = {
       amount: +amount,
       budgetType: formData.budgetType,
