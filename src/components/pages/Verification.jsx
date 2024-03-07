@@ -11,7 +11,9 @@ import localStorage from 'redux-persist/es/storage';
 
 const Verification = () => {
   const navigate = useNavigate();
-  
+  const Dispatch = useDispatch();
+  const data = useSelector(state => state?.userToken?.payload);
+  // console.log(data, "userdata")
 
   const homePage = () => {
     navigate('/');
@@ -97,7 +99,7 @@ const Verification = () => {
   
   const handleVerifyButtonClick = async () => {
     try {
-      await handleVerification(userInput.join(''), data?.payload);
+      await handleVerification(userInput.join(''), data);
     } catch (error) {
       console.error('Error verifying user input:', error.message);
       Swal.fire({
@@ -108,6 +110,7 @@ const Verification = () => {
       });
       setVerificationResult('Error verifying user input.');
     }
+    
   };
 
   const fetchToken = async () => {

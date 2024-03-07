@@ -13,9 +13,12 @@ import { Link } from 'react-router-dom';
 const CreateBudget = () => {
   const [showApproved, setShowApproved] = useState(false)
   const [showInput, setShowInput] = useState(false);
-  const [showExpenseModal, setShowExpenseModal] = useState(false);
-  const [budgetId, setBudgetId] = useState('');
+  // const [showExpenseModal, setShowExpenseModal] = useState(false);
+  // const [budgetId, setBudgetId] = useState('');
   const [budgets, setBudgets] = useState([]);
+  const [budgetBalance, setBudgetBalance] = useState('')
+  const [amountSpent, setAmountSpent] = useState('')
+  const [amountLoading, setAmountLoading] = useState(false)
 
   const getToken = localStorage.getItem('token');
 
@@ -31,8 +34,7 @@ const CreateBudget = () => {
   const handleCancel = () => {
     setShowInput(false);
   };
-  // approve
-  // approvedByDirector
+  
 
   const handleGetAllBudget = async () => {
     
@@ -95,8 +97,24 @@ const CreateBudget = () => {
   
 
   useEffect(() => {
+    (async()=>{
+      setAmountLoading(true)
+      try {
+      const response = await axios.get( `${url}/amountSpent`);
+      console.log(response.data);
+
+      if (response.data) {
+        setAmountSpent(response.data); 
+        console.log(amountLoading)
+      }
+      setAmountLoading(false)
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      setAmountLoading(false)
+    }})()
+
     handleGetAllBudget();
-  }, ['handlebudget']);
+  }, []);
 
   // console.log(budgetId);
 
@@ -105,10 +123,10 @@ const CreateBudget = () => {
       <div className="createBudgetTop">
 
         <div className="createHeaderLeft">
-          <section className='allCreateBudgetHeader'>
+          {/* <section className='allCreateBudgetHeader'>
             <p>Total Budget</p>
             <span>₦ 100,000</span>
-          </section>
+          </section> */}
 
           <section className='CreateBudgetHeaderLeftOne'>
             <p>Amount Spent</p>
@@ -134,7 +152,7 @@ const CreateBudget = () => {
           <p>Amount</p>
           <span>Budget Type</span>
           <p>Status</p>
-          <p>Actions</p>
+          <p>Approved</p>
         </section>
 
           {/* <ExpenseModal /> */}
@@ -159,18 +177,19 @@ const CreateBudget = () => {
                     
                       
                     <div className="showBudgetRmv" >
-                      
                       {
                         budget?.approvedByDirector? <FcApprove onClick={""}/>:<FcDisapprove onClick={()=>approvedBudget(budget._id)}/>
                       }
-                      
                     </div>
                     
                     <div className="budgetCategory"></div>
 
-                    <Link className="expenseButton" to={`/adminexpenses/${budget._id}`}>
-                          <p>Add Expense</p>
-                    </Link>
+                    {
+                      budget?.approvedByDirector? <Link className="expenseButton" to={`/adminexpenses/${budget._id}`}>
+                      <p>Add Expense</p>
+                      </Link> :
+                        <p>Pending...</p>
+                    }
                     
                   </div>
                 ))

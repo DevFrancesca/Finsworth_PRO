@@ -12,7 +12,7 @@ import { LuUserPlus2 } from "react-icons/lu";
 
 
 const AdminMenu = () => {
- 
+ const navigate = useNavigate()
   return (
     <div className='menuBody'>
 
@@ -85,12 +85,14 @@ const AdminMenu = () => {
             </article>
           </div> */}
 
-          <div className="bottomLogo-navs">
+          <div className="bottomLogo-navs" onClick={()=>{
+            localStorage.removeItem('token')
+            navigate('/')
+          }}>
             <div className="bottomNavLogo">
               <GrLogout style={{color:'white', fontSize: "30px"}}/>
             </div>
-            <NavLink to='/logout' className={({isActive})=> isActive? "active" : "inActive"}>LOGOUT</NavLink>
-            <div className="bottomNavLogo"></div>
+            <p>LOGOUT</p>
           </div>
           {/* <nav>HIDE SIDE BAR</nav> */}
         </section>

@@ -168,6 +168,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color: inherit;
+    text-decoration: none;
 }
 .expenseButton > button{
     border: none;

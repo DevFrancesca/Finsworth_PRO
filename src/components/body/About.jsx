@@ -19,7 +19,7 @@ const About = () => {
                     <div className="AboutLeft">
                       <div className='AboutTextLeft'>
                         <h1>Finsworth Expense Management</h1>
-                        <p>Keeping a lid on costs requires holistic thinking and strategies across organizations. Stratix is your trusted partner that can lead you to effective mobile-first strategies that will help you achieve your goals while staying within your budget.</p>
+                        <p>Keeping a lid on costs requires holistic thinking and strategies across organizations. Finsworth is your trusted partner that can lead you to effective mobile-first strategies that will help you achieve your goals while staying within your budget.</p>
                       </div>
                     </div>
                     <div className="AboutLeft">

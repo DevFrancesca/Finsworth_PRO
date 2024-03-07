@@ -119,12 +119,12 @@ const Signup = () => {
       navigate('/verification')
       
     } catch (error) {
-      const errorMessage = error.response ? error.response.data.error : 'An error occurred';
+      const errorMessage = error?.response ? error?.response?.data?.message: 'An error occurred';
 
       Swal.fire({
         icon: 'error',
-        text: 'Ouch..! Error signing up',
-        title: errorMessage,
+        text: errorMessage,
+        title: 'Signup error',
         color: 'red'
       })
       

@@ -157,3 +157,30 @@
         width: 80%;
     }
 }
+@media screen and (max-width: 900px) {
+    .SubscribePage{
+        width: 100%;
+        height: 100%;
+    }
+    .SubscribePageWrapper{
+        width: 100%;
+    }
+    .SubscribePageWrapperUp{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .SubscribePageWrapperUp h1{
+        font-size: 40px;
+    }
+    .SubscribePageWrapperUp p{
+        font-size: 10px;
+    }
+    .SubscribePageWrapperDown{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .SubscribeCon{
+        width: 80%;
+        height: 50%;
+    }
+}

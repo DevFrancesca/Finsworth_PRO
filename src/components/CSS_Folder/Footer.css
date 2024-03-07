@@ -131,9 +131,58 @@
     gap: 5px;
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
     .footerBody{
         width: 100%;
+        height: 100%;
+    }
+    .FooterUp{
+        width: 100%;
+        
+    }
+    .FooterUp h2{
+        color: #023047;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 20px;
+    }
+    .span p{
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+        font-size: 10px;
+    }
+    .FooterItSelf{
+        width: 100%;
+    }
+    .footerBodyWrap{
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .footerBodyWrap{
+        width: 100%;
+    }
+    .FooterContainer{
+        width: 100%;
+    }
+    .FooterContainer h1{
+        font-size: 15px;
+    }
+    .FooterContainer p{
+        font-size: 10px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    
+}
+@media only screen and (max-width: 414px) {
+    .footerBody{
+        width: 100%;
+        height: 100%;
     }
     .FooterUp{
         width: 100%;
@@ -182,7 +231,7 @@
 @media only screen and (max-width: 320px) {
     .footerBody{
         width: 100%;
-        height: max-content;
+        height: 100%;
     }
     .FooterUp{
         width: 100%;
@@ -205,7 +254,4 @@
         width: 100%;
         height: 100%;
     }
-
-
-
 }

@@ -12,7 +12,6 @@ import { IoIosArrowRoundBack } from "react-icons/io";
 
 const Login = () => {
   const navigate = useNavigate()
-  const getToken = localStorage.getItem('token');
 
   const homePage =()=>{
     navigate('/')
@@ -29,8 +28,8 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({
-    email: "",
-    password: "",
+    email: '',
+    password: ''
   })
 
   const handleShow =() =>{
@@ -98,7 +97,7 @@ const Login = () => {
         title: errorMessage,
         color: 'red'
       })
-
+      
       console.error(errorMessage);
     }
 
@@ -133,7 +132,7 @@ const Login = () => {
             <label htmlFor="">Email</label>
             <input type="email"placeholder='e.g agbanzofrancesca@gmail.com' onChange={handleLoginEmail}/>
           </div>
-          <p className="error" style={{color: "red"}}>{errorMessage.email}</p>
+          {errorMessage?.email&&<p className="error" style={{color: "red"}}>{errorMessage?.email}</p>}
 
           <div className="loginInputs">
             <label htmlFor="">Password</label>

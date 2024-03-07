@@ -2,7 +2,6 @@ import './Dropdown.css'
 import { useNavigate } from 'react-router-dom'
 
 
-
 const Dropdown =()=>{
     const navigate = useNavigate()
 
@@ -16,8 +15,6 @@ const Dropdown =()=>{
         navigate('/contactus')
       }
       
-
-
     return(
         <div className='Dropdown'>
         <h3>Home</h3>

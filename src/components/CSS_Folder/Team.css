@@ -132,6 +132,41 @@
     }
     .TeamBodyWrapper{
         width: 100%;
+        height: 100%;
+    }
+    .TeamBodyWrapUp{
+        width: 100%;
+
+    }
+    .TeamBodyWrapUp h1{
+        font-size: 15px;
+    }
+    .TeamBodyWrapUp p{
+        font-size: 8px;
+    }
+    .TeamBodyWrapDown{
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .Team{
+        width: 80%;
+        height: 100%;
+    }
+    .TeamUp{
+        width: 100%;
+        height: 100%;
+    }
+
+}
+@media screen and (max-width: 476px) {
+    .TeamBody{
+        width: 100%;
+        height: 90vh;
+    }
+    .TeamBodyWrapper{
+        width: 100%;
     }
     .TeamBodyWrapUp{
         width: 100%;
@@ -157,4 +192,36 @@
         height: 100%;
     }
 
+}
+@media screen and (max-width: 900px) {
+    .TeamBody{
+        width: 100%;
+        height: 100%;
+    }
+    .TeamBodyWrapper{
+        width: 100%;
+    }
+    .TeamBodyWrapUp{
+        width: 100%;
+    }
+    .TeamBodyWrapUp h1{
+        font-size: 15px;
+    }
+    .TeamBodyWrapUp p{
+        font-size: 8px;
+    }
+    .TeamBodyWrapDown{
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .Team{
+        width: 100%;
+        height: 100%;
+    }
+    .TeamUp{
+        width: 100%;
+        height: 100%;
+    }
 }

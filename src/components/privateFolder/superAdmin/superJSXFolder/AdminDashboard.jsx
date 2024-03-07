@@ -52,8 +52,10 @@ const AdminDashboard = () => {
     };
   
     fetchBudgetBalance();
-    // console.log(budgetId);
+   const token = localStorage.getItem('token')
+    !token ? navigate('/') : null
   }, []);
+  // useEffect(()=>{}[])
   return (
     <div className='adminBody'>
       <section className="adminBodyLeft">

@@ -25,9 +25,6 @@ const HomePage =() =>{
   navigate('/')
 }
 
-// const handleClick = () =>{
-//   setClick(true)
-// }
 const HeaderDrop =(
   show && (
     <div className='HeaderDRop'>
@@ -57,7 +54,7 @@ const HeaderDrop =(
         <button className='signup' onClick={signupPage}>Sign UP</button>
         <div className='rightimg'onClick={()=>setShow(!show)} >
           {
-            show === true? <GiCancel />: <HiMenu/>
+            show === true? <GiCancel className='Gi' />: <HiMenu className='Gi'/>
           }   
         </div>
         {
