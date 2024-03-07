@@ -1676,51 +1676,51 @@
 // export default BudgetInfo;
 
 
-const Modal = ({ handleCancel, handleGetAllBudget }) => {
-  // Your existing code
+// const Modal = ({ handleCancel, handleGetAllBudget }) => {
 
-  const handleBudgetSave = async () => {
-    // Your existing code
+//   const handleBudgetSave = async () => {
 
-    try {
-      const response = await axios.post(
-        url,
-        createBudget,
-        {
-          headers: {
-            Authorization: `Bearer ${budgetToken.trim()}`
-          }
-        }
-      );
-      setIsLoading(false);
+//     try {
+//       const response = await axios.post(
+//         url,
+//         createBudget,
+//         {
+//           headers: {
+//             Authorization: `Bearer ${budgetToken.trim()}`
+//           }
+//         }
+//       );
+//       setIsLoading(false);
 
-      console.log(response);
-      Swal.fire({
-        title: 'Budget creation Successful!',
-        text: `${response.data.message}`,
-        icon: 'success',
-        showCancelButton: false,
-        confirmButtonColor: '',
-        allowOutsideClick: false,
-        showConfirmButton: false,
-        timer: 1500
-      });
-      if (response) {
-        handleCancel();
-        handleGetAllBudget(); // Call handleGetAllBudget after successfully creating a budget
-      }
-    } catch (error) {
-      console.error('Error creating budget:', error);
-      Swal.fire({
-        icon: 'error',
-        text: 'Budget error!',
-        title: error.response.data.message || 'Unknown error',
-        color: 'red'
-      });
-    } finally {
-      setIsLoading(false);
-    }
-  };
+//       console.log(response);
+//       Swal.fire({
+//         title: 'Budget creation Successful!',
+//         text: `${response.data.message}`,
+//         icon: 'success',
+//         showCancelButton: false,
+//         confirmButtonColor: '',
+//         allowOutsideClick: false,
+//         showConfirmButton: false,
+//         timer: 1500
+//       });
+//       if (response) {
+//         handleCancel();
+//         handleGetAllBudget();
+//       }
+//     } catch (error) {
+//       console.error('Error creating budget:', error);
+//       Swal.fire({
+//         icon: 'error',
+//         text: 'Budget error!',
+//         title: error.response.data.message || 'Unknown error',
+//         color: 'red'
+//       });
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+// };
 
-  // Your existing code
-};
+
+
+

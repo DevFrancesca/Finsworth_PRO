@@ -28,8 +28,8 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   })
 
   const handleShow =() =>{
@@ -82,14 +82,14 @@ const Login = () => {
         confirmButtonColor: '',
         allowOutsideClick: false,
         showConfirmButton: false,
-        timer: 2000
+        timer: 1500
       })
       console.log(response.data.loginData);
       navigate('/admindashboard')
 
       setIsLoading(false)
     } catch (error) {
-      const errorMessage = error.response ? error.response.data.error : 'An error occurred'
+      const errorMessage = error.response ? error?.response?.data?.error : 'An error occurred'
       Swal.fire({
         icon: 'error',
         text: 'Login error!',
@@ -97,7 +97,7 @@ const Login = () => {
         title: errorMessage,
         color: 'red'
       })
-      
+
       console.error(errorMessage);
     }
 
@@ -132,16 +132,17 @@ const Login = () => {
             <label htmlFor="">Email</label>
             <input type="email"placeholder='e.g agbanzofrancesca@gmail.com' onChange={handleLoginEmail}/>
           </div>
-          {errorMessage?.email&&<p className="error" style={{color: "red"}}>{errorMessage?.email}</p>}
+          <p className="error" style={{color: "red"}}>{errorMessage.email}</p>
 
           <div className="loginInputs">
             <label htmlFor="">Password</label>
             <div className="passwordShow">
               <input type={showPassword ? "text" : "password"} placeholder='enter password' onChange={handleLoginPassword}/>
-              {showPassword ? <AiOutlineEye onClick={handleShow}/>
+              <div className='iconeye'>{showPassword ? <AiOutlineEye onClick={handleShow}/>
                :
               <AiOutlineEyeInvisible onClick={handleShow}/>
               }
+              </div>
             </div>
           </div>
           <p className="error"  style={{color: "red"}}>{errorMessage.password}</p>
@@ -183,4 +184,3 @@ const Login = () => {
 }
 
 export default Login
-  

@@ -93,8 +93,6 @@ const CreateBudget = () => {
       console.error(error);
     }
   }
-  
-  
 
   useEffect(() => {
     (async()=>{
@@ -195,7 +193,7 @@ const CreateBudget = () => {
                 ))
               ) : 
               (
-                <p key="no-budgets-message" style={{color: "red", fontSize: "2rem"}}>Network Error...</p>
+                <p key="no-budgets-message" style={{color: "red", fontSize: "1.5rem"}}> Loading...</p>
               )
               }
             </div>

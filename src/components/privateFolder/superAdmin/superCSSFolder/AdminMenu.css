@@ -106,12 +106,17 @@
     width: 90%;
     height: 24%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
-.bottomLogo-navs > p{
+.bottomLogo-navs > h4{
     font-size: 13px;
     color: #FFFDFD;
+    font-weight: 900;
+}
+.bottomLogo-navs > h4:hover{
+    color: #FB8500;
+    cursor: pointer;
 }
 .bottomNavLogo{
     width: 30%;

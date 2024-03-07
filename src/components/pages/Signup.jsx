@@ -119,12 +119,12 @@ const Signup = () => {
       navigate('/verification')
       
     } catch (error) {
-      const errorMessage = error?.response ? error?.response?.data?.message: 'An error occurred';
+      const errorMessage = error.response ? error.response.data.error : 'An error occurred';
 
       Swal.fire({
         icon: 'error',
-        text: errorMessage,
-        title: 'Signup error',
+        text: 'Ouch..! Error signing up',
+        title: errorMessage,
         color: 'red'
       })
       
@@ -173,11 +173,12 @@ const Signup = () => {
                     value={password}
                     onChange={handlePassword}
                   />
-
+                  <div className='iconeye'>
                   {showPassword ? <AiOutlineEye onClick={handleShow} />
                     :
                     <AiOutlineEyeInvisible onClick={handleShow} />
                   }
+                  </div>
                 </div>
               </div>
               <p className="error"style={{color: "red"}}>{errorMessage.password}</p>
@@ -189,10 +190,12 @@ const Signup = () => {
                     value={confirmPassword}
                     onChange={handleConfirmPassword}
                   />
+                  <div className='iconeye'>
                   {showConfirmPassword ? <AiOutlineEye onClick={handleShowConfirm} />
                     :
                     <AiOutlineEyeInvisible onClick={handleShowConfirm} />
                   }
+                  </div>
                 </div>
               </div>
               <p className="error">{errorMessage.confirmPassword}</p>

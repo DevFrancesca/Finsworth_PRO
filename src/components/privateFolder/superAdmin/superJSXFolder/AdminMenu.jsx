@@ -36,12 +36,12 @@ const AdminMenu = () => {
             <NavLink to='/createbudget' className={({isActive})=> isActive? "active" : "inActive"}>BUDGET</NavLink>
           </div>
 
-          {/* <div className="logo-navs">
+          <div className="logo-navs">
             <div className="navLogo">
               <GiExpense style={{color:'white'}}/>
             </div>
-            <NavLink to='/adminexpenses' className={({isActive})=> isActive? "active" : "inActive"}>EXPENSES</NavLink>
-          </div> */}
+            <NavLink to='/adminexpenses/:id' className={({isActive})=> isActive? "active" : "inActive"}>EXPENSES</NavLink>
+          </div>
 
           <div className="logo-navs">
             <div className="navLogo">
@@ -50,12 +50,12 @@ const AdminMenu = () => {
             <NavLink to='/createuser' className={({isActive})=> isActive? "active" : "inActive"}>ADD USER</NavLink>
           </div>
           
-          <div className="logo-navs">
+          {/* <div className="logo-navs">
             <div className="navLogo">
             <MdPayment style={{color:'white'}}/>
             </div>
             <NavLink to='/paymentpage' className={({isActive})=> isActive? "active" : "inActive"}>SUBSCRIPTION</NavLink>
-          </div>
+          </div> */}
           
           <div className="logo-navs">
             <div className="navLogo">
@@ -85,7 +85,8 @@ const AdminMenu = () => {
             <div className="bottomNavLogo">
               <GrLogout style={{color:'white', fontSize: "30px"}}/>
             </div>
-            <p>LOGOUT</p>
+            <h4>LOGOUT</h4>
+            <div className="bottomNavLogo"></div>
           </div>
           {/* <nav>HIDE SIDE BAR</nav> */}
         </section>
