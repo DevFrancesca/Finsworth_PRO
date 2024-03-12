@@ -120,7 +120,7 @@ const CreateBudget = () => {
     <div className='createBudgetBody'>
       <div className="createBudgetTop">
 
-        {/* <div className="createHeaderLeft">
+        <div className="createHeaderLeft">
           <section className='allCreateBudgetHeader'>
             <p>Total Budget</p>
             <span>₦ 100,000</span>
@@ -135,7 +135,7 @@ const CreateBudget = () => {
             <p>Budget Balance</p>
             <span>₦ 20,000</span>
           </section>
-        </div> */}
+        </div>
 
         <div className="createHeaderRight">
           <article className="createBudget" onClick={handleCreate}>
